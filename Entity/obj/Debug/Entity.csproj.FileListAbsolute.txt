@@ -1,0 +1,6 @@
+C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\Entity\bin\Debug\Entity.dll
+C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\Entity\bin\Debug\Entity.pdb
+C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\Entity\obj\Debug\Entity.dll
+C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\Entity\obj\Debug\Entity.pdb

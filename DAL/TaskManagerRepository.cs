@@ -1,0 +1,111 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Entity;
+
+namespace DAL
+{
+    public class TaskManagerRepository
+    {
+        string fileName = "FILE_TASK.txt";
+
+        public string Guardar(Tarea task)
+        {
+            var escritor = new StreamWriter(fileName, true);
+            escritor.WriteLine(task.ToString());
+            escritor.Close();
+            return $"\nSE REGISTRÓ EXITOSAMENTE LA TAREA CON ID : {task.idTask}";
+        }
+
+        public List<Tarea> Consultar()
+        {
+            var TareaList = new List<Tarea>();
+            try
+            {
+                var lector = new StreamReader(fileName);
+                while (!lector.EndOfStream)
+                {
+                    TareaList.Add(Map(lector.ReadLine()));
+                }
+                lector.Close();
+                return TareaList;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public Tarea Buscar(int Id)
+        {
+            List<Tarea> tareas = Consultar();
+            return tareas.FirstOrDefault(l => l.idTask == Id);
+        }
+
+        public bool Eliminar(int Id)
+        {
+            try
+            {
+                var tareasList = Consultar();
+                if (tareasList != null)
+                {
+                    var TareaAEliminar = tareasList.FirstOrDefault(e => e.idTask == Id);
+                    if (TareaAEliminar != null)
+                    {
+                        tareasList.Remove(TareaAEliminar);
+                        using (var escritor = new StreamWriter(fileName, false))
+                        {
+                            foreach (var establecimiento in tareasList)
+                            {
+                                escritor.WriteLine(establecimiento.ToString());
+                            }
+                        }
+                        return true;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            return false;
+        }
+
+        private Tarea Map(string linea)
+        {
+            Tarea obj = new Tarea();
+            obj.idTask = int.Parse(linea.Split(';')[0]);
+            obj.descripcion = linea.Split(';')[1];
+            obj.fechaCreacion = linea.Split(';')[2];
+            obj.estado = linea.Split(';')[3];
+
+            return obj;
+        }
+
+        public void EliminarTask(int idtask)
+        {
+            try
+            {
+                List<Tarea> tareas = Consultar();
+                FileStream file = new FileStream(fileName, FileMode.Create);
+                file.Close();
+
+                foreach (var item in tareas)
+                {
+                    if (item.idTask != idtask)
+                    {
+                        Guardar(item);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al eliminar la Tarea: {ex.Message}");
+            }
+        }
+
+
+    }
+}
