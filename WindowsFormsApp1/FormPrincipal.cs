@@ -19,12 +19,12 @@ namespace WindowsFormsApp1
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Exit(); // BOTON CERRAR VENTANA
         }
 
         private void btnMin_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;  // BOTON MINIMIZAR VENTANA
         }
         //METODO PARA ABRIR EL FORMULARIO DENTRO DE UN PANEL
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
@@ -50,22 +50,23 @@ namespace WindowsFormsApp1
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<AddTask>();
+            AbrirFormulario<AddTask>(); //BOTON ADD
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<DeleteTask>();
+            AbrirFormulario<DeleteTask>(); // BOTON DELETE
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FilterTask>();
+            AbrirFormulario<FilterTask>(); // BOTON FILTER
         }
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<ShowTask>();
+            AbrirFormulario<ShowTask>(); // BOTON SHOW
         }
+
     }
 }

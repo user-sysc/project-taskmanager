@@ -12,7 +12,6 @@ namespace Entity
         public string descripcion { get; set; }
         public string fechaCreacion { get; set; }
         public string estado { get; set; }
-        //spublic char Completed { get; set; }
         
         public Tarea() { }
         public Tarea(int idTask, string descripcion, string fechaCreacion, string estado)
@@ -21,7 +20,6 @@ namespace Entity
             this.descripcion = descripcion;
             this.fechaCreacion = fechaCreacion;
             this.estado = estado;
-            //this.Completed = Completed;
         }
         public override string ToString()
         {

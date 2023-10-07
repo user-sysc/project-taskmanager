@@ -135,10 +135,10 @@
             // guna2Panel3
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.DimGray;
+            this.guna2Panel3.Controls.Add(this.btnAdd);
             this.guna2Panel3.Controls.Add(this.btnShow);
             this.guna2Panel3.Controls.Add(this.btnDelete);
             this.guna2Panel3.Controls.Add(this.btnFilter);
-            this.guna2Panel3.Controls.Add(this.btnAdd);
             this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(966, 64);
@@ -197,7 +197,6 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(37)))));
             this.btnAdd.BorderRadius = 4;
             this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -209,7 +208,7 @@
             this.btnAdd.Location = new System.Drawing.Point(91, 9);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(180, 45);
-            this.btnAdd.TabIndex = 0;
+            this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "ADD TASK";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
