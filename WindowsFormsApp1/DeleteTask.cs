@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entity;
+using BLL;
 
 namespace WindowsFormsApp1
 {
     public partial class DeleteTask : Form
     {
+        TaskManagerService TMS = new TaskManagerService();
+
         public DeleteTask()
         {
             InitializeComponent();
@@ -31,6 +35,23 @@ namespace WindowsFormsApp1
             {
                 formPrincipal.BringToFront();
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //RECUPERAMOS LA INFORMACION INGRESADA POR EL USUARIO
+            if (!int.TryParse(txtId_delete.Text, out int id) || string.IsNullOrWhiteSpace(txtId_delete.Text))
+            {
+                MessageBox.Show("Ingrese un ID de tarea válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                string message = TMS.EliminarTask(id);
+                MessageBox.Show(message, "Resultado de eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtId_delete.Text = "";
+            }
+
         }
     }
 }

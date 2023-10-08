@@ -32,7 +32,7 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_id_delete = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtbox_id_delete = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtId_delete = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +80,7 @@
             this.btnDelete.Size = new System.Drawing.Size(139, 47);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "DELETE";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lbl_id_delete
             // 
@@ -92,28 +93,29 @@
             this.lbl_id_delete.TabIndex = 3;
             this.lbl_id_delete.Text = "ID TAREA";
             // 
-            // txtbox_id_delete
+            // txtId_delete
             // 
-            this.txtbox_id_delete.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_id_delete.DefaultText = "";
-            this.txtbox_id_delete.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbox_id_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbox_id_delete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbox_id_delete.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbox_id_delete.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_id_delete.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtbox_id_delete.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_id_delete.Location = new System.Drawing.Point(161, 73);
-            this.txtbox_id_delete.Name = "txtbox_id_delete";
-            this.txtbox_id_delete.PasswordChar = '\0';
-            this.txtbox_id_delete.PlaceholderText = "";
-            this.txtbox_id_delete.SelectedText = "";
-            this.txtbox_id_delete.Size = new System.Drawing.Size(200, 31);
-            this.txtbox_id_delete.TabIndex = 4;
+            this.txtId_delete.BorderRadius = 4;
+            this.txtId_delete.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtId_delete.DefaultText = "";
+            this.txtId_delete.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtId_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtId_delete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtId_delete.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtId_delete.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtId_delete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtId_delete.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtId_delete.Location = new System.Drawing.Point(161, 73);
+            this.txtId_delete.Name = "txtId_delete";
+            this.txtId_delete.PasswordChar = '\0';
+            this.txtId_delete.PlaceholderText = "ID TAREA A ELIMINAR";
+            this.txtId_delete.SelectedText = "";
+            this.txtId_delete.Size = new System.Drawing.Size(200, 31);
+            this.txtId_delete.TabIndex = 4;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtbox_id_delete);
+            this.groupBox1.Controls.Add(this.txtId_delete);
             this.groupBox1.Controls.Add(this.lbl_id_delete);
             this.groupBox1.Location = new System.Drawing.Point(180, 118);
             this.groupBox1.Name = "groupBox1";
@@ -147,7 +149,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_id_delete;
-        private Guna.UI2.WinForms.Guna2TextBox txtbox_id_delete;
+        private Guna.UI2.WinForms.Guna2TextBox txtId_delete;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }

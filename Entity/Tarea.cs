@@ -10,20 +10,20 @@ namespace Entity
     {
         public int idTask { get; set; }
         public string descripcion { get; set; }
-        public string fechaCreacion { get; set; }
+        public string fecha { get; set; }
         public string estado { get; set; }
         
         public Tarea() { }
-        public Tarea(int idTask, string descripcion, string fechaCreacion, string estado)
+        public Tarea(int idTask, string descripcion, string fecha, string estado)
         {
             this.idTask = idTask;
             this.descripcion = descripcion;
-            this.fechaCreacion = fechaCreacion;
+            this.fecha = fecha;
             this.estado = estado;
         }
         public override string ToString()
         {
-            return $"{idTask};{descripcion};{fechaCreacion};{estado};";
+            return $"{idTask};{descripcion};{fecha};{estado};";
         }
     }
 }

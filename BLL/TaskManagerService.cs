@@ -48,7 +48,7 @@ namespace BLL
 
                         Console.WriteLine($"Identificación Tarea: {task.idTask}");
                         Console.WriteLine($"Descripcion Tarea   : {task.descripcion}");
-                        Console.WriteLine($"Fecha Creacion      : {task.fechaCreacion}");
+                        Console.WriteLine($"Fecha Creacion      : {task.fecha}");
                         Console.WriteLine($"Estado              : {task.estado}");
                     }
                 }
@@ -87,6 +87,10 @@ namespace BLL
         public Tarea FiltrarPorId(int id)
         {
             return TareaList.FirstOrDefault(task => task.idTask == id);
+        }
+        public int ObtenerIdTask()
+        {
+            return TaskDAL.ObtenerUltimoId();
         }
     }
 }

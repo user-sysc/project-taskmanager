@@ -78,7 +78,7 @@ namespace DAL
             Tarea obj = new Tarea();
             obj.idTask = int.Parse(linea.Split(';')[0]);
             obj.descripcion = linea.Split(';')[1];
-            obj.fechaCreacion = linea.Split(';')[2];
+            obj.fecha = linea.Split(';')[2];
             obj.estado = linea.Split(';')[3];
 
             return obj;
@@ -105,6 +105,33 @@ namespace DAL
                 throw new Exception($"Error al eliminar la Tarea: {ex.Message}");
             }
         }
+        public int ObtenerUltimoId()
+        {
+            int ultimoId = 0;
+            try
+            {
+                if (File.Exists(fileName))
+                {
+                    var lector = new StreamReader(fileName);
+                    while (!lector.EndOfStream)
+                    {
+                        string linea = lector.ReadLine();
+                        Tarea tarea = Map(linea);
+                        ultimoId = tarea.idTask;
+                    }
+                    lector.Close();
+                }
+                // Incrementa el ID después de obtenerlo del archivo
+                ultimoId++;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al obtener el último ID: {ex.Message}");
+            }
+            return ultimoId;
+        }
+
+
 
 
     }
