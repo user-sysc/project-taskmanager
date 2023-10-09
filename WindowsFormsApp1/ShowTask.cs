@@ -22,15 +22,25 @@ namespace WindowsFormsApp1
 
             CargarTareas(); // Llamamos el metodo para cargar las tareas en el DataGridView
         }
-
         private void CargarTareas()
         {
+            // OBTENEMOS LA LISTA DE TAREAS DESDE SERVICE
             List<Tarea> tareas = TMS.Consultar();
 
-            // Asignar la lista de tareas al DataGridView
-            dataview_show.DataSource = tareas;
+            dataview_show.Rows.Clear();
 
+            // ASIGNAMOS MANUALMENTE LOS VALORES A LAS COLUMNAS 
+            foreach (Tarea tarea in tareas)
+            {
+                int rowIndex = dataview_show.Rows.Add();
+                dataview_show.Rows[rowIndex].Cells["ColumnID"].Value = tarea.idTask;
+                dataview_show.Rows[rowIndex].Cells["ColumnDescripcion"].Value = tarea.descripcion;
+                dataview_show.Rows[rowIndex].Cells["ColumnFecha"].Value = tarea.fecha;
+                dataview_show.Rows[rowIndex].Cells["ColumnEstado"].Value = tarea.estado;
+            }
         }
+
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -45,7 +55,12 @@ namespace WindowsFormsApp1
 
         private void ShowTask_Load(object sender, EventArgs e)
         {
-            
+           
+        }
+
+        private void dataview_show_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -40,9 +40,17 @@ namespace WindowsFormsApp1
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //RECUPERAMOS LA INFORMACION INGRESADA POR EL USUARIO
-            if (!int.TryParse(txtId_delete.Text, out int id) || string.IsNullOrWhiteSpace(txtId_delete.Text))
+            string ID = txtId_delete.Text;
+            if (string.IsNullOrWhiteSpace(ID))
+            {
+                MessageBox.Show("Por favor, complete todos los campos antes de agregar una tarea.");
+                txtId_delete.Text = "";
+                return;
+            }
+            else if (!int.TryParse(txtId_delete.Text, out int id) || string.IsNullOrWhiteSpace(txtId_delete.Text))
             {
                 MessageBox.Show("Ingrese un ID de tarea válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtId_delete.Text = "";
                 return;
             }
             else

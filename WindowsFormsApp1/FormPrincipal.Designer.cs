@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnMin = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnMax = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnClose = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -39,10 +40,10 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelFormularios = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnShow = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnFilter = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
@@ -54,6 +55,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel1.Controls.Add(this.btnMin);
             this.guna2Panel1.Controls.Add(this.btnMax);
             this.guna2Panel1.Controls.Add(this.btnClose);
@@ -63,13 +65,24 @@
             this.guna2Panel1.Size = new System.Drawing.Size(966, 32);
             this.guna2Panel1.TabIndex = 0;
             // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(22, 6);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(58, 19);
+            this.guna2HtmlLabel1.TabIndex = 3;
+            this.guna2HtmlLabel1.Text = "TASK DESK";
+            // 
             // btnMin
             // 
             this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
             this.btnMin.ImageRotate = 0F;
-            this.btnMin.Location = new System.Drawing.Point(893, 8);
+            this.btnMin.Location = new System.Drawing.Point(887, 8);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(16, 16);
             this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -83,7 +96,7 @@
             this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
             this.btnMax.ImageRotate = 0F;
-            this.btnMax.Location = new System.Drawing.Point(915, 8);
+            this.btnMax.Location = new System.Drawing.Point(909, 8);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(16, 16);
             this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -96,7 +109,7 @@
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageRotate = 0F;
-            this.btnClose.Location = new System.Drawing.Point(937, 8);
+            this.btnClose.Location = new System.Drawing.Point(931, 8);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(16, 16);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -134,7 +147,8 @@
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.DimGray;
+            this.guna2Panel3.BackColor = System.Drawing.Color.CadetBlue;
+            this.guna2Panel3.BorderRadius = 4;
             this.guna2Panel3.Controls.Add(this.btnAdd);
             this.guna2Panel3.Controls.Add(this.btnShow);
             this.guna2Panel3.Controls.Add(this.btnDelete);
@@ -144,6 +158,23 @@
             this.guna2Panel3.Size = new System.Drawing.Size(966, 64);
             this.guna2Panel3.TabIndex = 0;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BorderRadius = 4;
+            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
+            this.btnAdd.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(91, 9);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(180, 45);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "ADD TASK";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // btnShow
             // 
             this.btnShow.BorderRadius = 4;
@@ -151,7 +182,7 @@
             this.btnShow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnShow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnShow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnShow.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(37)))));
+            this.btnShow.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
             this.btnShow.Font = new System.Drawing.Font("Impact", 12F);
             this.btnShow.ForeColor = System.Drawing.Color.White;
             this.btnShow.Location = new System.Drawing.Point(697, 9);
@@ -168,7 +199,7 @@
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(37)))));
+            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
             this.btnDelete.Font = new System.Drawing.Font("Impact", 12F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(294, 9);
@@ -185,7 +216,7 @@
             this.btnFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(37)))));
+            this.btnFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
             this.btnFilter.Font = new System.Drawing.Font("Impact", 12F);
             this.btnFilter.ForeColor = System.Drawing.Color.White;
             this.btnFilter.Location = new System.Drawing.Point(496, 9);
@@ -194,23 +225,6 @@
             this.btnFilter.TabIndex = 2;
             this.btnFilter.Text = "FILTER TASK";
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BorderRadius = 4;
-            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(37)))));
-            this.btnAdd.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(91, 9);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(180, 45);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "ADD TASK";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // FormPrincipal
             // 
@@ -251,6 +265,7 @@
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnFilter;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }
 

@@ -34,8 +34,8 @@
             this.lbl_fecha = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.dtpFecha = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,6 +124,22 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.BorderRadius = 4;
+            this.dtpFecha.Checked = true;
+            this.dtpFecha.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(37)))));
+            this.dtpFecha.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpFecha.ForeColor = System.Drawing.Color.White;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpFecha.Location = new System.Drawing.Point(157, 88);
+            this.dtpFecha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFecha.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(220, 36);
+            this.dtpFecha.TabIndex = 14;
+            this.dtpFecha.Value = new System.DateTime(2023, 10, 7, 19, 55, 47, 16);
+            // 
             // btnAdd
             // 
             this.btnAdd.BorderRadius = 4;
@@ -141,27 +157,11 @@
             this.btnAdd.Text = "ADD";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dtpFecha
-            // 
-            this.dtpFecha.BorderRadius = 4;
-            this.dtpFecha.Checked = true;
-            this.dtpFecha.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(37)))));
-            this.dtpFecha.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpFecha.ForeColor = System.Drawing.Color.White;
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpFecha.Location = new System.Drawing.Point(157, 88);
-            this.dtpFecha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFecha.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(220, 36);
-            this.dtpFecha.TabIndex = 14;
-            this.dtpFecha.Value = new System.DateTime(2023, 10, 7, 19, 55, 47, 16);
-            // 
             // AddTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(964, 504);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
