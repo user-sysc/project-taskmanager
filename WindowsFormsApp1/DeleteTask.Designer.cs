@@ -112,6 +112,7 @@
             this.txtId_delete.SelectedText = "";
             this.txtId_delete.Size = new System.Drawing.Size(200, 31);
             this.txtId_delete.TabIndex = 4;
+            this.txtId_delete.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_delete_KeyPress);
             // 
             // groupBox1
             // 

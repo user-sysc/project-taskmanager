@@ -61,5 +61,14 @@ namespace WindowsFormsApp1
             }
 
         }
+
+        private void txtId_delete_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                // SI NO ES UN NUMERO DALE REVER PA, SOLO ACEPTA DIGITOS
+                e.Handled = true;
+            }
+        }
     }
 }
