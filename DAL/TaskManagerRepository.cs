@@ -131,6 +131,35 @@ namespace DAL
             }
             return ultimoId;
         }
+        public void ActualizarEstadoTarea(int idTarea)
+        {
+            try
+            {
+                var tareas = Consultar();
+
+                // Busca la tarea con el ID 
+                var tareaUpdate = tareas.FirstOrDefault(t => t.idTask == idTarea);
+
+                if (tareaUpdate != null)
+                {
+                    // Actualiza el estado de la tarea
+                    tareaUpdate.estado = "COMPLETE";
+
+                    // Guarda la lista actualizada en el archivo
+                    using (var escritor = new StreamWriter(fileName, false))
+                    {
+                        foreach (var tarea in tareas)
+                        {
+                            escritor.WriteLine(tarea.ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al actualizar el estado de la tarea: {ex.Message}");
+            }
+        }
 
 
 

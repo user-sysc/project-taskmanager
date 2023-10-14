@@ -62,5 +62,10 @@
             {
                 return TaskDAL.ObtenerUltimoId();
             }
-        }
+            public void ActualizarEstadoTarea(int idTarea)
+            {
+                TaskDAL.ActualizarEstadoTarea(idTarea);
+            }
+
     }
+}

@@ -43,8 +43,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_show = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.lblShow = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtBoxShow = new Guna.UI2.WinForms.Guna2TextBox();
+            this.groupShow = new System.Windows.Forms.GroupBox();
+            this.btnCompleted = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataview_show)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupShow.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBack
@@ -112,8 +117,9 @@
             this.dataview_show.Name = "dataview_show";
             this.dataview_show.ReadOnly = true;
             this.dataview_show.RowHeadersVisible = false;
+            this.dataview_show.RowHeadersWidth = 50;
             this.dataview_show.RowTemplate.Height = 40;
-            this.dataview_show.Size = new System.Drawing.Size(628, 309);
+            this.dataview_show.Size = new System.Drawing.Size(650, 309);
             this.dataview_show.TabIndex = 3;
             this.dataview_show.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGrid;
             this.dataview_show.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -141,7 +147,7 @@
             // 
             // ColumnID
             // 
-            this.ColumnID.FillWeight = 87.5891F;
+            this.ColumnID.FillWeight = 91.1287F;
             this.ColumnID.HeaderText = "ID TAREA";
             this.ColumnID.Name = "ColumnID";
             this.ColumnID.ReadOnly = true;
@@ -149,7 +155,7 @@
             // 
             // ColumnDescripcion
             // 
-            this.ColumnDescripcion.FillWeight = 155.4223F;
+            this.ColumnDescripcion.FillWeight = 204.5703F;
             this.ColumnDescripcion.HeaderText = "DESCRIPCION";
             this.ColumnDescripcion.Name = "ColumnDescripcion";
             this.ColumnDescripcion.ReadOnly = true;
@@ -157,14 +163,14 @@
             // 
             // ColumnCategoria
             // 
-            this.ColumnCategoria.FillWeight = 106.6961F;
+            this.ColumnCategoria.FillWeight = 111.0079F;
             this.ColumnCategoria.HeaderText = "CATEGORÍA";
             this.ColumnCategoria.Name = "ColumnCategoria";
             this.ColumnCategoria.ReadOnly = true;
             // 
             // ColumnFecha
             // 
-            this.ColumnFecha.FillWeight = 145.1261F;
+            this.ColumnFecha.FillWeight = 150.9909F;
             this.ColumnFecha.HeaderText = "FECHA FINALIZADO";
             this.ColumnFecha.Name = "ColumnFecha";
             this.ColumnFecha.ReadOnly = true;
@@ -172,10 +178,11 @@
             // 
             // ColumnEstado
             // 
-            this.ColumnEstado.FillWeight = 80.33474F;
+            this.ColumnEstado.FillWeight = 104.0412F;
             this.ColumnEstado.HeaderText = "ESTADO";
             this.ColumnEstado.Name = "ColumnEstado";
             this.ColumnEstado.ReadOnly = true;
+            this.ColumnEstado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ColumnEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // groupBox1
@@ -202,12 +209,74 @@
             // 
             this.guna2Elipse1.TargetControl = this.dataview_show;
             // 
+            // lblShow
+            // 
+            this.lblShow.BackColor = System.Drawing.Color.Transparent;
+            this.lblShow.Font = new System.Drawing.Font("Impact", 12F);
+            this.lblShow.ForeColor = System.Drawing.Color.White;
+            this.lblShow.Location = new System.Drawing.Point(36, 14);
+            this.lblShow.Name = "lblShow";
+            this.lblShow.Size = new System.Drawing.Size(17, 22);
+            this.lblShow.TabIndex = 5;
+            this.lblShow.Text = "ID ";
+            // 
+            // txtBoxShow
+            // 
+            this.txtBoxShow.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtBoxShow.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBoxShow.DefaultText = "";
+            this.txtBoxShow.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBoxShow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBoxShow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBoxShow.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBoxShow.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBoxShow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBoxShow.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtBoxShow.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBoxShow.Location = new System.Drawing.Point(86, 12);
+            this.txtBoxShow.Name = "txtBoxShow";
+            this.txtBoxShow.PasswordChar = '\0';
+            this.txtBoxShow.PlaceholderText = "ID";
+            this.txtBoxShow.SelectedText = "";
+            this.txtBoxShow.Size = new System.Drawing.Size(108, 26);
+            this.txtBoxShow.TabIndex = 6;
+            this.txtBoxShow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxShow_KeyPress);
+            // 
+            // groupShow
+            // 
+            this.groupShow.Controls.Add(this.lblShow);
+            this.groupShow.Controls.Add(this.txtBoxShow);
+            this.groupShow.Location = new System.Drawing.Point(537, 86);
+            this.groupShow.Name = "groupShow";
+            this.groupShow.Size = new System.Drawing.Size(221, 45);
+            this.groupShow.TabIndex = 7;
+            this.groupShow.TabStop = false;
+            // 
+            // btnCompleted
+            // 
+            this.btnCompleted.BorderRadius = 4;
+            this.btnCompleted.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCompleted.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCompleted.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCompleted.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCompleted.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
+            this.btnCompleted.Font = new System.Drawing.Font("Impact", 12F);
+            this.btnCompleted.ForeColor = System.Drawing.Color.White;
+            this.btnCompleted.Location = new System.Drawing.Point(788, 88);
+            this.btnCompleted.Name = "btnCompleted";
+            this.btnCompleted.Size = new System.Drawing.Size(139, 47);
+            this.btnCompleted.TabIndex = 8;
+            this.btnCompleted.Text = "COMPLETE";
+            this.btnCompleted.Click += new System.EventHandler(this.btnCompleted_Click);
+            // 
             // ShowTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(964, 504);
+            this.Controls.Add(this.btnCompleted);
+            this.Controls.Add(this.groupShow);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataview_show);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -218,6 +287,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataview_show)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupShow.ResumeLayout(false);
+            this.groupShow.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,10 +302,14 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_show;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblShow;
+        private Guna.UI2.WinForms.Guna2TextBox txtBoxShow;
+        private System.Windows.Forms.GroupBox groupShow;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstado;
+        private Guna.UI2.WinForms.Guna2Button btnCompleted;
     }
 }
