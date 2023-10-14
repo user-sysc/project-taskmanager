@@ -37,6 +37,7 @@
             this.dataview_show = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -94,6 +95,7 @@
             this.dataview_show.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID,
             this.ColumnDescripcion,
+            this.ColumnCategoria,
             this.ColumnFecha,
             this.ColumnEstado});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -139,7 +141,7 @@
             // 
             // ColumnID
             // 
-            this.ColumnID.FillWeight = 118.1891F;
+            this.ColumnID.FillWeight = 87.5891F;
             this.ColumnID.HeaderText = "ID TAREA";
             this.ColumnID.Name = "ColumnID";
             this.ColumnID.ReadOnly = true;
@@ -147,15 +149,22 @@
             // 
             // ColumnDescripcion
             // 
-            this.ColumnDescripcion.FillWeight = 145.6682F;
+            this.ColumnDescripcion.FillWeight = 155.4223F;
             this.ColumnDescripcion.HeaderText = "DESCRIPCION";
             this.ColumnDescripcion.Name = "ColumnDescripcion";
             this.ColumnDescripcion.ReadOnly = true;
             this.ColumnDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // ColumnCategoria
+            // 
+            this.ColumnCategoria.FillWeight = 106.6961F;
+            this.ColumnCategoria.HeaderText = "CATEGORÍA";
+            this.ColumnCategoria.Name = "ColumnCategoria";
+            this.ColumnCategoria.ReadOnly = true;
+            // 
             // ColumnFecha
             // 
-            this.ColumnFecha.FillWeight = 136.0181F;
+            this.ColumnFecha.FillWeight = 145.1261F;
             this.ColumnFecha.HeaderText = "FECHA FINALIZADO";
             this.ColumnFecha.Name = "ColumnFecha";
             this.ColumnFecha.ReadOnly = true;
@@ -163,7 +172,7 @@
             // 
             // ColumnEstado
             // 
-            this.ColumnEstado.FillWeight = 75.29301F;
+            this.ColumnEstado.FillWeight = 80.33474F;
             this.ColumnEstado.HeaderText = "ESTADO";
             this.ColumnEstado.Name = "ColumnEstado";
             this.ColumnEstado.ReadOnly = true;
@@ -219,12 +228,13 @@
         private Guna.UI2.WinForms.Guna2Button btnBack;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2DataGridView dataview_show;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstado;
         private System.Windows.Forms.GroupBox groupBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_show;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstado;
     }
 }

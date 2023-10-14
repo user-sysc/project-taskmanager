@@ -34,6 +34,8 @@
             this.lbl_fecha = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbCategoria = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lblCategoria = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dtpFecha = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1.SuspendLayout();
@@ -79,6 +81,7 @@
             this.txtDescripcion.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtDescripcion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDescripcion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDescripcion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescripcion.Location = new System.Drawing.Point(157, 40);
             this.txtDescripcion.Name = "txtDescripcion";
@@ -112,6 +115,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbCategoria);
+            this.groupBox1.Controls.Add(this.lblCategoria);
             this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.lbl_descripcion);
@@ -120,9 +125,47 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(180, 113);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(401, 153);
+            this.groupBox1.Size = new System.Drawing.Size(401, 209);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.cmbCategoria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(37)))));
+            this.cmbCategoria.BorderRadius = 4;
+            this.cmbCategoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(37)))));
+            this.cmbCategoria.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbCategoria.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbCategoria.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
+            this.cmbCategoria.ItemHeight = 30;
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "TRABAJO",
+            "PERSONAL",
+            "PROYECTOS",
+            "FAMILIA",
+            "UNIVERSIDAD",
+            "FINANZAS",
+            "VIAJES"});
+            this.cmbCategoria.Location = new System.Drawing.Point(157, 143);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(220, 36);
+            this.cmbCategoria.TabIndex = 16;
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.lblCategoria.Font = new System.Drawing.Font("Impact", 12F);
+            this.lblCategoria.ForeColor = System.Drawing.Color.White;
+            this.lblCategoria.Location = new System.Drawing.Point(34, 149);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(72, 22);
+            this.lblCategoria.TabIndex = 15;
+            this.lblCategoria.Text = "CATEGORÍA";
+            this.lblCategoria.Click += new System.EventHandler(this.lblCategoria_Click);
             // 
             // dtpFecha
             // 
@@ -132,7 +175,7 @@
             this.dtpFecha.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpFecha.ForeColor = System.Drawing.Color.White;
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpFecha.Location = new System.Drawing.Point(157, 88);
+            this.dtpFecha.Location = new System.Drawing.Point(157, 89);
             this.dtpFecha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha.Name = "dtpFecha";
@@ -150,7 +193,7 @@
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(37)))));
             this.btnAdd.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(180, 299);
+            this.btnAdd.Location = new System.Drawing.Point(180, 346);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(139, 47);
             this.btnAdd.TabIndex = 13;
@@ -169,6 +212,7 @@
             this.Controls.Add(this.btnBack);
             this.Name = "AddTask";
             this.Text = "AddTask";
+            this.Load += new System.EventHandler(this.AddTask_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -186,5 +230,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpFecha;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblCategoria;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbCategoria;
     }
 }

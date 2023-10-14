@@ -33,36 +33,6 @@
             {
                 return TaskDAL.Consultar();
             }
-            public void MostrarTareas()
-            {
-                try
-                {
-                    TareaList = TaskDAL.Consultar();
-
-                    if (TareaList.Count > 0)
-                    {
-                        Console.WriteLine("Lista de Tareas registradas:");
-                        foreach (var task in TareaList)
-                        {
-                            Console.WriteLine("------------------------------------------------");
-
-                            Console.WriteLine($"Identificación Tarea: {task.idTask}");
-                            Console.WriteLine($"Descripcion Tarea   : {task.descripcion}");
-                            Console.WriteLine($"Fecha Creacion      : {task.fecha}");
-                            Console.WriteLine($"Estado              : {task.estado}");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("No hay tareas registradas.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error al mostrar las Tareas: {ex.Message}");
-                    Console.WriteLine($"No hay tareas registradas");
-                }
-            }
             public string EliminarTask(int idTask)
             {
                 try

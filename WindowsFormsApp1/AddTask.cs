@@ -36,8 +36,9 @@ namespace WindowsFormsApp1
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // RECUPERAMOS LA INFORMACION DIGITADA POR EL USUARIO
-            string descripcion = txtDescripcion.Text;
+            string descripcion = txtDescripcion.Text.ToUpper();
             string fechaFinalizacion = dtpFecha.Value.ToString("dd/MM/yyyy");
+            string categoria = cmbCategoria.Text.ToUpper();
 
             if (string.IsNullOrWhiteSpace(descripcion) || string.IsNullOrWhiteSpace(fechaFinalizacion))
             {
@@ -52,21 +53,29 @@ namespace WindowsFormsApp1
                 {
                     idTask = id,
                     descripcion = descripcion,
+                    categoria = categoria,
                     fecha = fechaFinalizacion,
                     estado = "PENDING"
                 };
                 // PERSISTENCIA EN EL FILE
                 TMS.Guardar(nuevaTarea);
                 MessageBox.Show("La tarea se agregó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtDescripcion.Text = ""; //para limpiar la caja de descripcion
-                dtpFecha.ResetText(); //para limpiar el data timer
+                txtDescripcion.Text = ""; //CLEAN COMBOBOX
+                dtpFecha.Value = DateTime.Now; //FECHA ACTUALIZADA
+                cmbCategoria.SelectedIndex = -1; //CLEAN COMBOBOX
 
             }
         }
 
+        private void lblCategoria_Click(object sender, EventArgs e)
+        {
 
-       
+        }
 
+        private void AddTask_Load(object sender, EventArgs e)
+        {
+            dtpFecha.Value = DateTime.Now; 
+        }
     }
 }
 

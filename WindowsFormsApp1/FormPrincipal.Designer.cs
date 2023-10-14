@@ -39,6 +39,9 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelFormularios = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.imgbtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnShow = new Guna.UI2.WinForms.Guna2Button();
@@ -69,7 +72,7 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(22, 6);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(58, 19);
@@ -138,12 +141,57 @@
             // 
             // panelFormularios
             // 
+            this.panelFormularios.Controls.Add(this.lblTitle);
+            this.panelFormularios.Controls.Add(this.guna2ImageButton2);
+            this.panelFormularios.Controls.Add(this.imgbtn);
             this.panelFormularios.Controls.Add(this.guna2Panel3);
             this.panelFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormularios.Location = new System.Drawing.Point(0, 32);
             this.panelFormularios.Name = "panelFormularios";
             this.panelFormularios.Size = new System.Drawing.Size(966, 504);
             this.panelFormularios.TabIndex = 2;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Enabled = false;
+            this.lblTitle.Font = new System.Drawing.Font("Impact", 52F);
+            this.lblTitle.ForeColor = System.Drawing.Color.CadetBlue;
+            this.lblTitle.Location = new System.Drawing.Point(442, 242);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(403, 87);
+            this.lblTitle.TabIndex = 4;
+            this.lblTitle.Text = "TASKMANAGER";
+            // 
+            // guna2ImageButton2
+            // 
+            this.guna2ImageButton2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton2.HoverState.ImageSize = new System.Drawing.Size(256, 256);
+            this.guna2ImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.Image")));
+            this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton2.ImageRotate = 0F;
+            this.guna2ImageButton2.ImageSize = new System.Drawing.Size(256, 256);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(116, 66);
+            this.guna2ImageButton2.Name = "guna2ImageButton2";
+            this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(256, 256);
+            this.guna2ImageButton2.Size = new System.Drawing.Size(300, 438);
+            this.guna2ImageButton2.TabIndex = 3;
+            // 
+            // imgbtn
+            // 
+            this.imgbtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgbtn.HoverState.ImageSize = new System.Drawing.Size(34, 34);
+            this.imgbtn.Image = ((System.Drawing.Image)(resources.GetObject("imgbtn.Image")));
+            this.imgbtn.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgbtn.ImageRotate = 0F;
+            this.imgbtn.ImageSize = new System.Drawing.Size(34, 34);
+            this.imgbtn.Location = new System.Drawing.Point(919, 461);
+            this.imgbtn.Name = "imgbtn";
+            this.imgbtn.PressedState.ImageSize = new System.Drawing.Size(34, 34);
+            this.imgbtn.Size = new System.Drawing.Size(35, 34);
+            this.imgbtn.TabIndex = 1;
+            this.imgbtn.Click += new System.EventHandler(this.imgbtn_Click);
             // 
             // guna2Panel3
             // 
@@ -167,7 +215,7 @@
             this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
             this.btnAdd.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnAdd.Location = new System.Drawing.Point(91, 9);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(180, 45);
@@ -184,7 +232,7 @@
             this.btnShow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnShow.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
             this.btnShow.Font = new System.Drawing.Font("Impact", 12F);
-            this.btnShow.ForeColor = System.Drawing.Color.White;
+            this.btnShow.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnShow.Location = new System.Drawing.Point(697, 9);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(180, 45);
@@ -201,7 +249,7 @@
             this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
             this.btnDelete.Font = new System.Drawing.Font("Impact", 12F);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnDelete.Location = new System.Drawing.Point(294, 9);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(180, 45);
@@ -218,7 +266,7 @@
             this.btnFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
             this.btnFilter.Font = new System.Drawing.Font("Impact", 12F);
-            this.btnFilter.ForeColor = System.Drawing.Color.White;
+            this.btnFilter.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnFilter.Location = new System.Drawing.Point(496, 9);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(180, 45);
@@ -245,6 +293,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.panelFormularios.ResumeLayout(false);
+            this.panelFormularios.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -266,6 +315,9 @@
         private Guna.UI2.WinForms.Guna2Button btnFilter;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2ImageButton imgbtn;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
     }
 }
 

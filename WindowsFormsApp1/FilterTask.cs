@@ -40,12 +40,14 @@ namespace WindowsFormsApp1
 
             if (tareasFiltradas.Count == 0)
             {
+                dataview_filter.Rows.Clear();
                 MessageBox.Show("No hay tareas registradas para la fecha seleccionada.", "Sin tareas", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 ActualizarGridView(tareasFiltradas);
             }
+            dtpFechaFilter.Value = DateTime.Now;
 
         }
 
@@ -73,9 +75,15 @@ namespace WindowsFormsApp1
                 int rowIndex = dataview_filter.Rows.Add();
                 dataview_filter.Rows[rowIndex].Cells["ColumnID"].Value = tarea.idTask;
                 dataview_filter.Rows[rowIndex].Cells["ColumnDescripcion"].Value = tarea.descripcion;
+                dataview_filter.Rows[rowIndex].Cells["ColumnCategoria"].Value = tarea.categoria;
                 dataview_filter.Rows[rowIndex].Cells["ColumnFecha"].Value = tarea.fecha;
                 dataview_filter.Rows[rowIndex].Cells["ColumnEstado"].Value = tarea.estado;
             }
+        }
+
+        private void FilterTask_Load(object sender, EventArgs e)
+        {
+            dtpFechaFilter.Value = DateTime.Now;
         }
     }
 }

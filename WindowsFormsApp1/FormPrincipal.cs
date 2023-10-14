@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
         public FormPrincipal()
         {
             InitializeComponent();
+            this.Icon = Properties.Resources.checklist__32_; //ICON
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -68,7 +69,13 @@ namespace WindowsFormsApp1
             AbrirFormulario<ShowTask>(); // BOTON SHOW
         }
 
-        //*******************************************************
+        private void imgbtn_Click(object sender, EventArgs e)
+        {
+            string urlGitHub = "https://github.com/user-sysc/project-taskmanager";
+
+            System.Diagnostics.Process.Start(urlGitHub);
+
+        }
 
     }
 }

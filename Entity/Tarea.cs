@@ -12,18 +12,20 @@ namespace Entity
         public string descripcion { get; set; }
         public string fecha { get; set; }
         public string estado { get; set; }
+        public string categoria { get; set; }
         
         public Tarea() { }
-        public Tarea(int idTask, string descripcion, string fecha, string estado)
+        public Tarea(int idTask, string descripcion, string categoria, string fecha, string estado)
         {
             this.idTask = idTask;
             this.descripcion = descripcion;
+            this.categoria = categoria;
             this.fecha = fecha;
             this.estado = estado;
         }
         public override string ToString()
         {
-            return $"{idTask};{descripcion};{fecha};{estado};";
+            return $"{idTask};{descripcion};{categoria};{fecha};{estado};";
         }
     }
 }

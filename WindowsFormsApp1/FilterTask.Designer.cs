@@ -41,6 +41,7 @@
             this.dataview_filter = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -150,6 +151,7 @@
             this.dataview_filter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID,
             this.ColumnDescripcion,
+            this.ColumnCategoria,
             this.ColumnFecha,
             this.ColumnEstado});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -161,13 +163,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataview_filter.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataview_filter.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            this.dataview_filter.Location = new System.Drawing.Point(112, 153);
+            this.dataview_filter.Location = new System.Drawing.Point(110, 153);
             this.dataview_filter.MultiSelect = false;
             this.dataview_filter.Name = "dataview_filter";
             this.dataview_filter.ReadOnly = true;
             this.dataview_filter.RowHeadersVisible = false;
             this.dataview_filter.RowTemplate.Height = 40;
-            this.dataview_filter.Size = new System.Drawing.Size(628, 259);
+            this.dataview_filter.Size = new System.Drawing.Size(655, 259);
             this.dataview_filter.TabIndex = 6;
             this.dataview_filter.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGrid;
             this.dataview_filter.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -194,7 +196,7 @@
             // 
             // ColumnID
             // 
-            this.ColumnID.FillWeight = 106.1295F;
+            this.ColumnID.FillWeight = 97.4202F;
             this.ColumnID.HeaderText = "ID TAREA";
             this.ColumnID.Name = "ColumnID";
             this.ColumnID.ReadOnly = true;
@@ -202,15 +204,22 @@
             // 
             // ColumnDescripcion
             // 
-            this.ColumnDescripcion.FillWeight = 132.8454F;
+            this.ColumnDescripcion.FillWeight = 135.6498F;
             this.ColumnDescripcion.HeaderText = "DESCRIPCION";
             this.ColumnDescripcion.Name = "ColumnDescripcion";
             this.ColumnDescripcion.ReadOnly = true;
             this.ColumnDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // ColumnCategoria
+            // 
+            this.ColumnCategoria.FillWeight = 102.111F;
+            this.ColumnCategoria.HeaderText = "CATEGORÍA";
+            this.ColumnCategoria.Name = "ColumnCategoria";
+            this.ColumnCategoria.ReadOnly = true;
+            // 
             // ColumnFecha
             // 
-            this.ColumnFecha.FillWeight = 115.9609F;
+            this.ColumnFecha.FillWeight = 118.4088F;
             this.ColumnFecha.HeaderText = "FECHA FINALIZADO";
             this.ColumnFecha.Name = "ColumnFecha";
             this.ColumnFecha.ReadOnly = true;
@@ -218,7 +227,7 @@
             // 
             // ColumnEstado
             // 
-            this.ColumnEstado.FillWeight = 63.76092F;
+            this.ColumnEstado.FillWeight = 65.10692F;
             this.ColumnEstado.HeaderText = "ESTADO";
             this.ColumnEstado.Name = "ColumnEstado";
             this.ColumnEstado.ReadOnly = true;
@@ -241,6 +250,7 @@
             this.Controls.Add(this.btnBack);
             this.Name = "FilterTask";
             this.Text = "FilterTask";
+            this.Load += new System.EventHandler(this.FilterTask_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataview_filter)).EndInit();
@@ -258,10 +268,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private Guna.UI2.WinForms.Guna2DataGridView dataview_filter;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpFechaFilter;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstado;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }
