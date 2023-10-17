@@ -20,3 +20,25 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\WindowsFormsApp1\obj\Deb
 C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.DeleteTask.resources
 C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FilterTask.resources
 C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ShowTask.resources
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\bin\Debug\BLL.dll
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\bin\Debug\Entity.dll
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\bin\Debug\Guna.UI2.dll
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\bin\Debug\DAL.dll
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\bin\Debug\BLL.pdb
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\bin\Debug\Entity.pdb
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\bin\Debug\DAL.pdb
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddTask.resources
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.DeleteTask.resources
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FilterTask.resources
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormPrincipal.resources
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ShowTask.resources
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

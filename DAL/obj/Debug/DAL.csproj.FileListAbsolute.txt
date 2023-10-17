@@ -7,3 +7,12 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\DAL\obj\Debug\DAL.csproj
 C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\DAL\obj\Debug\DAL.dll
 C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\DAL\obj\Debug\DAL.pdb
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\DAL\bin\Debug\DAL.dll
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\DAL\bin\Debug\DAL.pdb
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\DAL\bin\Debug\Entity.dll
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\DAL\bin\Debug\Entity.pdb
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\DAL\obj\Debug\DAL.dll
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\DAL\obj\Debug\DAL.pdb

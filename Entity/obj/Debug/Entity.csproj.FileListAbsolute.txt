@@ -4,3 +4,9 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\Entity\obj\Debug\Entity.
 C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\Entity\obj\Debug\Entity.dll
 C:\Users\Julio Ríos\Documents\PROGRAMACION\TaskManager\Entity\obj\Debug\Entity.pdb
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\Entity\bin\Debug\Entity.dll
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\Entity\bin\Debug\Entity.pdb
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\Entity\obj\Debug\Entity.csproj.AssemblyReference.cache
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\Entity\obj\Debug\Entity.dll
+C:\Users\morga\OneDrive\Documentos\Proyectos\project-taskmanager\Entity\obj\Debug\Entity.pdb
