@@ -52,6 +52,7 @@
             // btnBack
             // 
             this.btnBack.BorderRadius = 4;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -80,6 +81,7 @@
             // btnFilter
             // 
             this.btnFilter.BorderRadius = 4;
+            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

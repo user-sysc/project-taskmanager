@@ -1,71 +1,88 @@
-﻿    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using DAL;
-    using Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DAL;
+using Entity;
 
-    namespace BLL
+namespace BLL
+{
+    public class TaskManagerService
     {
-        public class TaskManagerService
+        TaskManagerRepository TaskDAL = null;
+        public List<Tarea> TareaList = null;
+
+        public TaskManagerService()
         {
-            TaskManagerRepository TaskDAL = null;
-            public List<Tarea> TareaList = null;
+            TaskDAL = new TaskManagerRepository();
+            TareaList = TaskDAL.Consultar();
+        }
 
-            public TaskManagerService()
+        public String Guardar(Tarea task)
+        {
+            if (task == null)
             {
-                TaskDAL = new TaskManagerRepository();
-                TareaList = TaskDAL.Consultar();
+                return "ERROR... No se Puede Agregar Tareas Nulos o Sin Informacion.";
             }
-
-            public String Guardar(Tarea task)
+            var msg = (TaskDAL.Guardar(task));
+            TareaList = TaskDAL.Consultar();
+            return msg;
+        }
+        public List<Tarea> Consultar()
+        {
+            return TaskDAL.Consultar();
+        }
+        public string EliminarTask(int idTask)
+        {
+            try
             {
-                if (task == null)
+                Tarea task = TaskDAL.Buscar(idTask);
+
+                if (task != null)
                 {
-                    return "ERROR... No se Puede Agregar Tareas Nulos o Sin Informacion.";
+                    TaskDAL.EliminarTask(idTask);
+                    return $"\nSe eliminó la Tarea con Id: {idTask} satisfactoriamente.";
                 }
-                var msg = (TaskDAL.Guardar(task));
-                TareaList = TaskDAL.Consultar();
-                return msg;
-            }
-            public List<Tarea> Consultar()
-            {
-                return TaskDAL.Consultar();
-            }
-            public string EliminarTask(int idTask)
-            {
-                try
+                else
                 {
-                    Tarea task = TaskDAL.Buscar(idTask);
-
-                    if (task != null)
-                    {
-                        TaskDAL.EliminarTask(idTask);
-                        return $"\nSe eliminó la Tarea con Id: {idTask} satisfactoriamente.";
-                    }
-                    else
-                    {
-                        return $"\nNo se encontró ninguna Tarea con el id: {idTask}.";
-                    }
-                }
-                catch (Exception ex)
-                {
-                    return $"Error al eliminar la Tarea: {ex.Message}";
+                    return $"\nNo se encontró ninguna Tarea con el id: {idTask}.";
                 }
             }
-            public Tarea FiltrarPorId(int id)
+            catch (Exception ex)
             {
-                return TareaList.FirstOrDefault(task => task.idTask == id);
+                return $"Error al eliminar la Tarea: {ex.Message}";
             }
-            public int ObtenerIdTask()
+        }
+        public Tarea FiltrarPorId(int id)
+        {
+            return TareaList.FirstOrDefault(task => task.idTask == id);
+        }
+        public int ObtenerIdTask()
+        {
+            return TaskDAL.ObtenerUltimoId();
+        }
+        public void ActualizarEstadoTarea(int idTarea)
+        {
+            TaskDAL.ActualizarEstadoTarea(idTarea);
+        }
+        public string EliminarTaskComplete()
+        {
+            List<Tarea> tareasCompletadas = TareaList.Where(tarea => tarea.estado == "COMPLETE").ToList();
+            if (tareasCompletadas.Count > 0)
             {
-                return TaskDAL.ObtenerUltimoId();
+                foreach (Tarea tarea in tareasCompletadas)
+                {
+                    TaskDAL.Eliminar(tarea.idTask);
+                    TareaList = TaskDAL.Consultar();
+                }
+                return "Todas las tareas completadas se eliminaron correctamente.";
             }
-            public void ActualizarEstadoTarea(int idTarea)
+            else
             {
-                TaskDAL.ActualizarEstadoTarea(idTarea);
+                return "No hay tareas completadas para eliminar.";
             }
-
+            
+        }
     }
 }

@@ -51,16 +51,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void ShowTask_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void dataview_show_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void btnCompleted_Click(object sender, EventArgs e)
         {   
             if (int.TryParse(txtBoxShow.Text, out int idTarea))

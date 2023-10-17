@@ -55,6 +55,7 @@
             // btnBack
             // 
             this.btnBack.BorderRadius = 4;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -143,7 +144,6 @@
             this.dataview_show.ThemeStyle.RowsStyle.Height = 40;
             this.dataview_show.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dataview_show.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataview_show.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataview_show_CellContentClick);
             // 
             // ColumnID
             // 
@@ -255,6 +255,7 @@
             // btnCompleted
             // 
             this.btnCompleted.BorderRadius = 4;
+            this.btnCompleted.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCompleted.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCompleted.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCompleted.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -283,7 +284,6 @@
             this.Controls.Add(this.btnBack);
             this.Name = "ShowTask";
             this.Text = "ShowTask";
-            this.Load += new System.EventHandler(this.ShowTask_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataview_show)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

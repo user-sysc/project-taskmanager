@@ -165,7 +165,6 @@
             this.lblCategoria.Size = new System.Drawing.Size(72, 22);
             this.lblCategoria.TabIndex = 15;
             this.lblCategoria.Text = "CATEGORÍA";
-            this.lblCategoria.Click += new System.EventHandler(this.lblCategoria_Click);
             // 
             // dtpFecha
             // 

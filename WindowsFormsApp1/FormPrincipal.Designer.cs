@@ -209,12 +209,13 @@
             // btnAdd
             // 
             this.btnAdd.BorderRadius = 4;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
-            this.btnAdd.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Impact", 12F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnAdd.Location = new System.Drawing.Point(91, 9);
             this.btnAdd.Name = "btnAdd";
@@ -226,6 +227,7 @@
             // btnShow
             // 
             this.btnShow.BorderRadius = 4;
+            this.btnShow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnShow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnShow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -243,6 +245,7 @@
             // btnDelete
             // 
             this.btnDelete.BorderRadius = 4;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -260,6 +263,7 @@
             // btnFilter
             // 
             this.btnFilter.BorderRadius = 4;
+            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

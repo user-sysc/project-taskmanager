@@ -67,11 +67,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void lblCategoria_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddTask_Load(object sender, EventArgs e)
         {
             dtpFecha.Value = DateTime.Now; 

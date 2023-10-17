@@ -34,12 +34,14 @@
             this.lbl_id_delete = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtId_delete = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDeleteTaskC = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBack
             // 
             this.btnBack.BorderRadius = 4;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -68,6 +70,7 @@
             // btnDelete
             // 
             this.btnDelete.BorderRadius = 4;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -75,7 +78,7 @@
             this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
             this.btnDelete.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(180, 350);
+            this.btnDelete.Location = new System.Drawing.Point(180, 312);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(139, 47);
             this.btnDelete.TabIndex = 2;
@@ -87,7 +90,7 @@
             this.lbl_id_delete.BackColor = System.Drawing.Color.Transparent;
             this.lbl_id_delete.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_id_delete.ForeColor = System.Drawing.Color.White;
-            this.lbl_id_delete.Location = new System.Drawing.Point(39, 78);
+            this.lbl_id_delete.Location = new System.Drawing.Point(39, 53);
             this.lbl_id_delete.Name = "lbl_id_delete";
             this.lbl_id_delete.Size = new System.Drawing.Size(57, 22);
             this.lbl_id_delete.TabIndex = 3;
@@ -106,7 +109,7 @@
             this.txtId_delete.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtId_delete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtId_delete.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtId_delete.Location = new System.Drawing.Point(161, 73);
+            this.txtId_delete.Location = new System.Drawing.Point(161, 47);
             this.txtId_delete.Name = "txtId_delete";
             this.txtId_delete.PasswordChar = '\0';
             this.txtId_delete.PlaceholderText = "ID TAREA A ELIMINAR";
@@ -119,11 +122,28 @@
             // 
             this.groupBox1.Controls.Add(this.txtId_delete);
             this.groupBox1.Controls.Add(this.lbl_id_delete);
-            this.groupBox1.Location = new System.Drawing.Point(180, 118);
+            this.groupBox1.Location = new System.Drawing.Point(180, 137);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(418, 182);
+            this.groupBox1.Size = new System.Drawing.Size(418, 125);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
+            // 
+            // btnDeleteTaskC
+            // 
+            this.btnDeleteTaskC.BorderRadius = 4;
+            this.btnDeleteTaskC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteTaskC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteTaskC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteTaskC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteTaskC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
+            this.btnDeleteTaskC.Font = new System.Drawing.Font("Impact", 12F);
+            this.btnDeleteTaskC.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteTaskC.Location = new System.Drawing.Point(392, 312);
+            this.btnDeleteTaskC.Name = "btnDeleteTaskC";
+            this.btnDeleteTaskC.Size = new System.Drawing.Size(206, 47);
+            this.btnDeleteTaskC.TabIndex = 6;
+            this.btnDeleteTaskC.Text = "DELETE TASK\'S COMPLETE";
+            this.btnDeleteTaskC.Click += new System.EventHandler(this.btnDeleteTaskC_Click);
             // 
             // DeleteTask
             // 
@@ -131,13 +151,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(964, 504);
+            this.Controls.Add(this.btnDeleteTaskC);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.btnBack);
             this.Name = "DeleteTask";
             this.Text = "DeleteTask";
-            this.Load += new System.EventHandler(this.DeleteTask_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -153,5 +173,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_id_delete;
         private Guna.UI2.WinForms.Guna2TextBox txtId_delete;
         private System.Windows.Forms.GroupBox groupBox1;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteTaskC;
     }
 }

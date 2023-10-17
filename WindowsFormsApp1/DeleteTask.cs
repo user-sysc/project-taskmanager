@@ -21,11 +21,6 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void DeleteTask_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -43,7 +38,7 @@ namespace WindowsFormsApp1
             string ID = txtId_delete.Text;
             if (string.IsNullOrWhiteSpace(ID))
             {
-                MessageBox.Show("Por favor, complete todos los campos antes de agregar una tarea.");
+                MessageBox.Show("Por favor, complete el campo antes de eliminar una tarea.");
                 txtId_delete.Text = "";
                 return;
             }
@@ -69,6 +64,13 @@ namespace WindowsFormsApp1
                 // SI NO ES UN NUMERO DALE REVER PA, SOLO ACEPTA DIGITOS
                 e.Handled = true;
             }
+        }
+
+        private void btnDeleteTaskC_Click(object sender, EventArgs e)
+        {
+            string msg = TMS.EliminarTaskComplete();
+            
+            MessageBox.Show(msg, "Resultado de Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
