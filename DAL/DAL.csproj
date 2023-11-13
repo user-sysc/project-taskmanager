@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="CategoriaRepository.cs" />
     <Compile Include="ConexionDB.cs" />
+    <Compile Include="TareaRepository.cs" />
     <Compile Include="TaskManagerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

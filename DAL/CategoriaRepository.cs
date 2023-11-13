@@ -68,6 +68,7 @@ namespace DAL
         private Categoria map(OracleDataReader reader)
         {
             Categoria categoria = new Categoria();
+
             categoria.id_categoria = Convert.ToInt32(reader["id_categoria"]);
             categoria.nombre_categoria = Convert.ToString(reader["nombre_categoria"]);
 

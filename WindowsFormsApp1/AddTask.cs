@@ -15,8 +15,9 @@ namespace WindowsFormsApp1
 {
     public partial class AddTask : Form
     {
-        TaskManagerService TMS = new TaskManagerService();
-
+        //TaskManagerService TMS = new TaskManagerService();
+        TareaService service = new TareaService();
+        
         public AddTask()
         {
             InitializeComponent();
@@ -35,42 +36,54 @@ namespace WindowsFormsApp1
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // RECUPERAMOS LA INFORMACION DIGITADA POR EL USUARIO
-            string descripcion = txtDescripcion.Text.ToUpper();
-            string fechaFinalizacion = dtpFecha.Value.ToString("dd/MM/yyyy");
-            string categoria = cmbCategoria.Text.ToUpper();
+            try
+            {
+                // RECUPERAMOS LA INFORMACION DIGITADA POR EL USUARIO
+                string descripcion = txtDescripcion.Text.ToUpper();
+                string fechaFinalizacion = dtpFecha.Value.ToString("dd/MM/yyyy");
+                string categoria = cmbCategoria.Text.ToUpper();
 
-            if (string.IsNullOrWhiteSpace(descripcion) || string.IsNullOrWhiteSpace(fechaFinalizacion))
-            {
-                MessageBox.Show("Por favor, complete todos los campos antes de agregar una tarea.");
-                return;
-            }
-            else
-            {
-                int id = TMS.ObtenerIdTask();
-                
-                Tarea nuevaTarea = new Tarea
+                if (string.IsNullOrWhiteSpace(descripcion) || string.IsNullOrWhiteSpace(fechaFinalizacion))
                 {
-                    idTask = id,
-                    descripcion = descripcion,
-                    categoria = categoria,
-                    fecha = fechaFinalizacion,
-                    estado = "PENDING"
-                };
-                // PERSISTENCIA EN EL FILE
-                TMS.Guardar(nuevaTarea);
-                MessageBox.Show("La tarea se agregó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtDescripcion.Text = ""; //CLEAN COMBOBOX
-                dtpFecha.Value = DateTime.Now; //FECHA ACTUALIZADA
-                cmbCategoria.SelectedIndex = -1; //CLEAN COMBOBOX
+                    MessageBox.Show("Por favor, complete todos los campos antes de agregar una tarea.");
+                    return;
+                }
+                else
+                {
+                    Categoria categoriaNew = new Categoria
+                    {
+                        nombre_categoria = categoria
+                    };
 
+                    Tarea nuevaTarea = new Tarea
+                    {
+                        descripcion = descripcion,
+                        categoria = categoriaNew,
+                        fecha = fechaFinalizacion,
+                        estado = "PENDING"
+                    };
+
+                    service.insertarTarea(nuevaTarea);
+
+                    MessageBox.Show("La tarea se agregó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    txtDescripcion.Text = "";        //CLEAN COMBOBOX
+                    dtpFecha.Value = DateTime.Now;   //FECHA ACTUALIZADA
+                    cmbCategoria.SelectedIndex = -1; //CLEAN COMBOBOX
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo agregar la tarea " + ex.Message);
             }
         }
 
         private void AddTask_Load(object sender, EventArgs e)
         {
-            dtpFecha.Value = DateTime.Now; 
+            dtpFecha.Value = DateTime.Now;
         }
+        
     }
 }
 

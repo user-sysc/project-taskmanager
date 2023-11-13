@@ -15,30 +15,39 @@ namespace WindowsFormsApp1
     public partial class ShowTask : Form
     {
         TaskManagerService TMS;
+        TareaService service;
+
         public ShowTask()
         {
             InitializeComponent();
             TMS = new TaskManagerService();
+            service = new TareaService();
 
             CargarTareas(); 
         }
         private void CargarTareas()
         {
-            List<Tarea> tareas = TMS.Consultar();
-
-            dataview_show.Rows.Clear();
-
-            foreach (Tarea tarea in tareas)
+            try
             {
-                int rowIndex = dataview_show.Rows.Add();
-                dataview_show.Rows[rowIndex].Cells["ColumnID"].Value = tarea.idTask;
-                dataview_show.Rows[rowIndex].Cells["ColumnDescripcion"].Value = tarea.descripcion;
-                dataview_show.Rows[rowIndex].Cells["ColumnCategoria"].Value = tarea.categoria;
-                dataview_show.Rows[rowIndex].Cells["ColumnFecha"].Value = tarea.fecha;
-                dataview_show.Rows[rowIndex].Cells["ColumnEstado"].Value = tarea.estado;
-            }
-        }
+                List<Tarea> tareas = TMS.Consultar();
+                //List<Tarea> tareas = service.ObtenerTareas();
+                dataview_show.Rows.Clear();
 
+                foreach (Tarea tarea in tareas)
+                {
+                    int rowIndex = dataview_show.Rows.Add();
+                    dataview_show.Rows[rowIndex].Cells["ColumnID"].Value = tarea.idTask;
+                    dataview_show.Rows[rowIndex].Cells["ColumnDescripcion"].Value = tarea.descripcion;
+                    dataview_show.Rows[rowIndex].Cells["ColumnCategoria"].Value = tarea.categoria;
+                    dataview_show.Rows[rowIndex].Cells["ColumnFecha"].Value = tarea.fecha;
+                    dataview_show.Rows[rowIndex].Cells["ColumnEstado"].Value = tarea.estado;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }  
+        }
 
 
         private void btnBack_Click(object sender, EventArgs e)

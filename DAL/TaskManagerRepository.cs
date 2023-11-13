@@ -78,7 +78,7 @@ namespace DAL
             Tarea obj = new Tarea();
             obj.idTask = int.Parse(linea.Split(';')[0]);
             obj.descripcion = linea.Split(';')[1];
-            obj.categoria = linea.Split(';')[2];
+            obj.categoria.nombre_categoria = linea.Split(';')[2];
             obj.fecha = linea.Split(';')[3];
             obj.estado = linea.Split(';')[4];
 
