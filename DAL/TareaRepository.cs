@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 using Entity;
+using System.Data;
 
 namespace DAL
 {
@@ -16,12 +17,42 @@ namespace DAL
         {
 
         }
+        public DataTable ListarCategorias()
+        {
+            DataTable tabla = new DataTable();
+            AbrirConexion();
+            try
+            {
+                using (OracleCommand comando = conexion.CreateCommand())
+                {
+                    comando.CommandText = "ListarCategorias";
+                    comando.CommandType = CommandType.StoredProcedure;
+
+                    comando.Parameters.Add("p_cursor", OracleDbType.RefCursor, ParameterDirection.Output);
+
+                    using (OracleDataReader leerFilas = comando.ExecuteReader())
+                    {
+                        tabla.Load(leerFilas);
+                    }
+                }
+
+                return tabla;
+            }
+            catch (Exception)
+            {
+                CerrarConexion();
+                throw;
+            }
+        }
+//        SELECT t.idTask, t.descripcion, t.fecha, t.estado, c.nombre_categoria
+//FROM tareas t
+//INNER JOIN categorias c ON t.id_categoria = c.id_categoria;
 
         public string InsertarTarea(Tarea tarea)
         {
             try
             {
-                string ssql = "INSERT INTO tareas (DESCRIPCION, FECHA_FINALIZADO, ESTADO) VALUES (:descripcion, :fecha, :estado)";
+                string ssql = "INSERT INTO tareas (DESCRIPCION, FECHA_FINALIZADO, ESTADO, ID_CATEGORIA) VALUES (:descripcion, :fecha, :estado, :categoria)";
                 AbrirConexion();
                 OracleCommand orclCmd = conexion.CreateCommand();
                 orclCmd.CommandText = ssql;
@@ -29,7 +60,7 @@ namespace DAL
                 orclCmd.Parameters.Add(new OracleParameter(":descripcion", tarea.descripcion));
                 orclCmd.Parameters.Add(new OracleParameter(":fecha_finalizado", tarea.fecha));
                 orclCmd.Parameters.Add(new OracleParameter(":estado", tarea.estado));
-                //orclCmd.Parameters.Add(new OracleParameter(":categoria", tarea.categoria));
+                orclCmd.Parameters.Add(new OracleParameter(":categoria", tarea.categoria.id_categoria));
 
                 int i = orclCmd.ExecuteNonQuery();
 

@@ -15,7 +15,6 @@ namespace WindowsFormsApp1
 {
     public partial class AddTask : Form
     {
-        //TaskManagerService TMS = new TaskManagerService();
         TareaService service = new TareaService();
         
         public AddTask()
@@ -41,7 +40,10 @@ namespace WindowsFormsApp1
                 // RECUPERAMOS LA INFORMACION DIGITADA POR EL USUARIO
                 string descripcion = txtDescripcion.Text.ToUpper();
                 string fechaFinalizacion = dtpFecha.Value.ToString("dd/MM/yyyy");
-                string categoria = cmbCategoria.Text.ToUpper();
+                //string categoria = cmbCategoria.Text.ToUpper();
+
+                Categoria categoriaSeleccionada = cmbCategoria.SelectedItem as Categoria;
+
 
                 if (string.IsNullOrWhiteSpace(descripcion) || string.IsNullOrWhiteSpace(fechaFinalizacion))
                 {
@@ -50,15 +52,11 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    Categoria categoriaNew = new Categoria
-                    {
-                        nombre_categoria = categoria
-                    };
 
                     Tarea nuevaTarea = new Tarea
                     {
                         descripcion = descripcion,
-                        categoria = categoriaNew,
+                        categoria = categoriaSeleccionada,
                         fecha = fechaFinalizacion,
                         estado = "PENDING"
                     };
@@ -82,8 +80,36 @@ namespace WindowsFormsApp1
         private void AddTask_Load(object sender, EventArgs e)
         {
             dtpFecha.Value = DateTime.Now;
+            CargarCategoriasEnComboBox();
+
         }
-        
+        private void CargarCategoriasEnComboBox()
+        {
+            try
+            {
+                // Llama al método ListarCategorias para obtener las categorías
+                TareaService obj = new TareaService();
+                DataTable categorias = obj.listarCategorias();
+
+                // Asigna la fuente de datos al ComboBox con el datasource
+                cmbCategoria.DataSource = categorias;
+
+                // Especificó qué columnas mostrar en el ComboBox
+                cmbCategoria.DisplayMember = "nombre_categoria";  
+
+                // Asignó el valor de la columna de identificación 
+                cmbCategoria.ValueMember = "id_categoria";  
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar las categorías: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                
+            }
+        }
+
     }
 }
 

@@ -142,14 +142,6 @@
             this.cmbCategoria.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
             this.cmbCategoria.ItemHeight = 30;
-            this.cmbCategoria.Items.AddRange(new object[] {
-            "TRABAJO",
-            "PERSONAL",
-            "PROYECTOS",
-            "FAMILIA",
-            "UNIVERSIDAD",
-            "FINANZAS",
-            "VIAJES"});
             this.cmbCategoria.Location = new System.Drawing.Point(157, 143);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(220, 36);
