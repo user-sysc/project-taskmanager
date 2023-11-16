@@ -16,7 +16,8 @@ namespace WindowsFormsApp1
     public partial class AddTask : Form
     {
         TareaService service = new TareaService();
-        
+        CategoriaService serviceCategorias = new CategoriaService();
+
         public AddTask()
         {
             InitializeComponent();
@@ -40,10 +41,8 @@ namespace WindowsFormsApp1
                 // RECUPERAMOS LA INFORMACION DIGITADA POR EL USUARIO
                 string descripcion = txtDescripcion.Text.ToUpper();
                 string fechaFinalizacion = dtpFecha.Value.ToString("dd/MM/yyyy");
-                //string categoria = cmbCategoria.Text.ToUpper();
 
-                Categoria categoriaSeleccionada = cmbCategoria.SelectedItem as Categoria;
-
+                Categoria categoriaSeleccionada = (Categoria)cmbCategoria.SelectedItem;
 
                 if (string.IsNullOrWhiteSpace(descripcion) || string.IsNullOrWhiteSpace(fechaFinalizacion))
                 {
@@ -53,17 +52,17 @@ namespace WindowsFormsApp1
                 else
                 {
 
-                    Tarea nuevaTarea = new Tarea
+                    Tarea tarea = new Tarea
                     {
                         descripcion = descripcion,
-                        categoria = categoriaSeleccionada,
-                        fecha = fechaFinalizacion,
-                        estado = "PENDING"
+                        fecha = dtpFecha.Value,
+                        estado = "PENDING",
+                        categoria = categoriaSeleccionada
                     };
 
-                    service.insertarTarea(nuevaTarea);
+                    var mssg = service.insertarTarea(tarea);
 
-                    MessageBox.Show("La tarea se agregó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(mssg, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     txtDescripcion.Text = "";        //CLEAN COMBOBOX
@@ -80,35 +79,28 @@ namespace WindowsFormsApp1
         private void AddTask_Load(object sender, EventArgs e)
         {
             dtpFecha.Value = DateTime.Now;
-            CargarCategoriasEnComboBox();
-
+            ObtenerCategorias();
         }
-        private void CargarCategoriasEnComboBox()
+
+        private void ObtenerCategorias()
         {
             try
             {
-                // Llama al método ListarCategorias para obtener las categorías
-                TareaService obj = new TareaService();
-                DataTable categorias = obj.listarCategorias();
+                List<Categoria> categorias = serviceCategorias.ObtenerCategorias();
 
-                // Asigna la fuente de datos al ComboBox con el datasource
+                // Asigna la lista de categorías al ComboBox
                 cmbCategoria.DataSource = categorias;
-
-                // Especificó qué columnas mostrar en el ComboBox
-                cmbCategoria.DisplayMember = "nombre_categoria";  
-
-                // Asignó el valor de la columna de identificación 
-                cmbCategoria.ValueMember = "id_categoria";  
+                cmbCategoria.DisplayMember = "nombre_categoria";
+                cmbCategoria.ValueMember = "id_categoria";
+                cmbCategoria.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar las categorías: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                
+                MessageBox.Show("Error al cargar las categorías: " + 
+                    ex.Message);
             }
         }
+
 
     }
 }

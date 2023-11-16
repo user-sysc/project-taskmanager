@@ -23,11 +23,37 @@ namespace BLL
         }
         public List<Tarea> ObtenerTareas()
         {
-            return repository.ObtenerTodasTareas();
+            return repository.ConsultarTareas();
         }
-        public DataTable listarCategorias()
+        public List<Tarea> FiltrarTareasPorFecha(DateTime fechaSeleccionada)
         {
-            return repository.ListarCategorias();
+            return repository.FiltrarTareasPorFecha(fechaSeleccionada);
         }
+        public string EliminarTareasCompletas()
+        {
+            try
+            {
+                repository.EliminarTareasCompletas();
+                return "Todas las tareas completadas se eliminaron correctamente.";
+            }
+            catch (Exception ex)
+            {
+                return "Error al eliminar tareas completadas: " + ex.Message;
+            }
+        }
+
+        public string CambiarEstadoTarea(int id)
+        {
+            try
+            {
+                repository.CambiarEstadoTarea(id);
+                return "TASK COMPLETE.";
+            }
+            catch (Exception ex)
+            {
+                return "ERROR AL ACTUALIZAR EL ESTADO: " + ex.Message;
+            }
+        }
+
     }
 }

@@ -13,28 +13,35 @@ namespace DAL
     {
         public CategoriaRepository() : base() {}
 
-        
 
-        public List<Categoria> ObtenerTodos()
+        public List<Categoria> MostrarCategorias()
         {
+            OracleDataReader reader;
+            OracleConnection sqlCon = new OracleConnection();
             List<Categoria> list = new List<Categoria>();
-            string ssql = "SELECT * FROM categorias";
-
-            AbrirConexion();
-            OracleCommand cmd = conexion.CreateCommand();
-            cmd.CommandText = ssql;
-
-            OracleDataReader Rdr = cmd.ExecuteReader();
-
-            while (Rdr.Read())
+            try
             {
-                list.Add(map(Rdr));
+                sqlCon = ConexionDB.getInstancia().CrearConexion();
+                OracleCommand comando = new OracleCommand("SELECT * FROM Categorias", sqlCon);
+                comando.CommandType = CommandType.Text;
+                sqlCon.Open();
+                reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(map(reader));
+                }
+                reader.Close();
+                
+                return list;
             }
-            Rdr.Close();
-            CerrarConexion();
-
-            return list;
-
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
         }
 
         private Categoria map(OracleDataReader reader)

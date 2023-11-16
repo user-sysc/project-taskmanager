@@ -14,39 +14,39 @@ namespace WindowsFormsApp1
 {
     public partial class ShowTask : Form
     {
-        TaskManagerService TMS;
         TareaService service;
 
         public ShowTask()
         {
             InitializeComponent();
-            TMS = new TaskManagerService();
             service = new TareaService();
-
-            CargarTareas(); 
+            //CargarTareas();
+            MostrarTareas();
         }
-        private void CargarTareas()
-        {
-            try
-            {
-                List<Tarea> tareas = TMS.Consultar();
-                //List<Tarea> tareas = service.ObtenerTareas();
-                dataview_show.Rows.Clear();
 
-                foreach (Tarea tarea in tareas)
-                {
-                    int rowIndex = dataview_show.Rows.Add();
-                    dataview_show.Rows[rowIndex].Cells["ColumnID"].Value = tarea.idTask;
-                    dataview_show.Rows[rowIndex].Cells["ColumnDescripcion"].Value = tarea.descripcion;
-                    dataview_show.Rows[rowIndex].Cells["ColumnCategoria"].Value = tarea.categoria;
-                    dataview_show.Rows[rowIndex].Cells["ColumnFecha"].Value = tarea.fecha;
-                    dataview_show.Rows[rowIndex].Cells["ColumnEstado"].Value = tarea.estado;
-                }
-            }
-            catch (Exception)
+        private void MostrarTareas()
+        {
+            dataview_show.Rows.Clear();
+            dataview_show.Columns.Clear();
+            if (dataview_show.ColumnCount == 0)
             {
-                throw;
-            }  
+                dataview_show.Columns.Add("ID TASK", "ID TASK");
+                dataview_show.Columns.Add("DESCRIPCION", "DESCRIPCION");
+                dataview_show.Columns.Add("CATEGORIA", "CATEGORIA");
+                dataview_show.Columns.Add("FECHA FINALIZADO", "FECHA FINALIZADO");
+                dataview_show.Columns.Add("ESTADO", "ESTADO");
+            }
+            var tareas = service.ObtenerTareas();
+            foreach (var tarea in tareas)
+            {
+                dataview_show.Rows.Add(
+                    tarea.idTask,
+                    tarea.descripcion,
+                    tarea.categoria.nombre_categoria,
+                    tarea.fecha.ToString("dd/MM/yyyy"),
+                    tarea.estado
+                    );
+            }
         }
 
 
@@ -67,9 +67,9 @@ namespace WindowsFormsApp1
                 string estadoActual = ObtenerEstadoTarea(idTarea);
                 if (estadoActual == "PENDING")
                 {
-                    TMS.ActualizarEstadoTarea(idTarea);
+                    service.CambiarEstadoTarea(idTarea);
 
-                    CargarTareas();
+                    MostrarTareas();
 
                     txtBoxShow.Text = " ";
 
@@ -77,7 +77,7 @@ namespace WindowsFormsApp1
                 }
                 else if(estadoActual == "COMPLETE")
                 {
-                    MessageBox.Show("La tarea ya se encuentra en estado COMPLETED.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("La tarea ya se encuentra en estado COMPLETE.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -98,16 +98,17 @@ namespace WindowsFormsApp1
                 e.Handled = true;
             }
         }
+
         private string ObtenerEstadoTarea(int idTarea)
         {
             foreach (DataGridViewRow fila in dataview_show.Rows)
             {
-                if (fila.Cells["ColumnID"].Value != null)
+                if (fila.Cells["ID TASK"].Value != null)
                 {
-                    int id = Convert.ToInt32(fila.Cells["ColumnID"].Value);
+                    int id = Convert.ToInt32(fila.Cells["ID TASK"].Value);
                     if (id == idTarea)
                     {
-                        return Convert.ToString(fila.Cells["ColumnEstado"].Value);
+                        return Convert.ToString(fila.Cells["ESTADO"].Value);
                     }
                 }
             }

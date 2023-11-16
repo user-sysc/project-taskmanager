@@ -11,9 +11,7 @@ namespace Entity
         public int id_categoria { get; set; }
         public string nombre_categoria { get; set; }
 
-        public Categoria()
-        {
-        }
+        public Categoria() {}
 
         public Categoria(int id_categoria, string nombre_categoria)
         {

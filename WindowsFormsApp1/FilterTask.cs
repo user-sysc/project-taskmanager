@@ -15,7 +15,9 @@ namespace WindowsFormsApp1
 {
     public partial class FilterTask : Form
     {
-        TaskManagerService TMS = new TaskManagerService();
+        //TaskManagerService TMS = new TaskManagerService();
+        TareaService service = new TareaService();
+
         public FilterTask()
         {
             InitializeComponent();
@@ -55,9 +57,9 @@ namespace WindowsFormsApp1
         {
             List<Tarea> tareasFiltradas = new List<Tarea>();
 
-            foreach (Tarea tarea in TMS.Consultar()) 
+            foreach (Tarea tarea in service.ObtenerTareas())
             {
-                DateTime fechaTarea = DateTime.ParseExact(tarea.fecha, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                DateTime fechaTarea = tarea.fecha;
 
                 if (fechaTarea.Date == fechaSeleccionada.Date)
                 {
@@ -69,15 +71,27 @@ namespace WindowsFormsApp1
         }
         private void ActualizarGridView(List<Tarea> tareasFiltradas)
         {
+            //dataview_filter.Rows.Clear();
             dataview_filter.Rows.Clear();
-            foreach (Tarea tarea in tareasFiltradas)
+            dataview_filter.Columns.Clear();
+            if (dataview_filter.ColumnCount == 0)
             {
-                int rowIndex = dataview_filter.Rows.Add();
-                dataview_filter.Rows[rowIndex].Cells["ColumnID"].Value = tarea.idTask;
-                dataview_filter.Rows[rowIndex].Cells["ColumnDescripcion"].Value = tarea.descripcion;
-                dataview_filter.Rows[rowIndex].Cells["ColumnCategoria"].Value = tarea.categoria;
-                dataview_filter.Rows[rowIndex].Cells["ColumnFecha"].Value = tarea.fecha;
-                dataview_filter.Rows[rowIndex].Cells["ColumnEstado"].Value = tarea.estado;
+                dataview_filter.Columns.Add("ID TASK", "ID TASK");
+                dataview_filter.Columns.Add("DESCRIPCION", "DESCRIPCION");
+                dataview_filter.Columns.Add("CATEGORIA", "CATEGORIA");
+                dataview_filter.Columns.Add("FECHA FINALIZADO", "FECHA FINALIZADO");
+                dataview_filter.Columns.Add("ESTADO", "ESTADO");
+            }
+            var tareas = tareasFiltradas;
+            foreach (var tarea in tareas)
+            {
+                dataview_filter.Rows.Add(
+                    tarea.idTask,
+                    tarea.descripcion,
+                    tarea.categoria.nombre_categoria,
+                    tarea.fecha.ToString("dd/MM/yyyy"),
+                    tarea.estado
+                    );
             }
         }
 

@@ -143,6 +143,7 @@
             this.cmbCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
             this.cmbCategoria.ItemHeight = 30;
             this.cmbCategoria.Location = new System.Drawing.Point(157, 143);
+            this.cmbCategoria.MaxDropDownItems = 15;
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(220, 36);
             this.cmbCategoria.TabIndex = 16;

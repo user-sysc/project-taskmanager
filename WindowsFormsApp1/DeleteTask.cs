@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class DeleteTask : Form
     {
-        TaskManagerService TMS = new TaskManagerService();
+        //TaskManagerService TMS = new TaskManagerService();
         TareaService service = new TareaService();
 
         public DeleteTask()
@@ -51,7 +51,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                //string message = TMS.EliminarTask(id);
                 string message = service.eliminarTarea(id);
                 MessageBox.Show(message, "Resultado de eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtId_delete.Text = "";
@@ -70,7 +69,7 @@ namespace WindowsFormsApp1
 
         private void btnDeleteTaskC_Click(object sender, EventArgs e)
         {
-            string msg = TMS.EliminarTaskComplete();
+            string msg = service.EliminarTareasCompletas();
             
             MessageBox.Show(msg, "Resultado de Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

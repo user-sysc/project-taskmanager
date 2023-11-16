@@ -10,26 +10,36 @@ namespace DAL
 {
     public class ConexionDB
     {
-        protected OracleConnection conexion = null;    // = new OracleConnection();
-        protected string cadena = "user id=user_dev2;password=admin;data source=" +
-                                "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
-                                "(HOST=127.0.0.1)(PORT=1521))(CONNECT_DATA=" +
-                                "(SERVICE_NAME=XE)))";
+        private static ConexionDB conexion = null;
 
         public ConexionDB()
         {
-            conexion = new OracleConnection(cadena);
-        }
-        public string AbrirConexion()
-        {
-            conexion.Open();
-            return conexion.State.ToString();
         }
 
-        public string CerrarConexion()
+        public OracleConnection CrearConexion()
         {
-            conexion.Close();
-            return conexion.State.ToString();
+            OracleConnection cadena = new OracleConnection();
+            try
+            {
+                cadena.ConnectionString = @"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))
+                                          (CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=user_dev2;Password=admin;";
+            }
+            catch (Exception ex)
+            {
+                cadena = null;
+                throw ex;
+            }
+            return cadena;
         }
+
+        public static ConexionDB getInstancia()
+        {
+            if (conexion == null)
+            {
+                conexion = new ConexionDB();
+            }
+            return conexion;
+        }
+
     }
 }

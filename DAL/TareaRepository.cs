@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using Entity;
 using System.Data;
 
@@ -13,176 +14,236 @@ namespace DAL
     {
         private CategoriaRepository categoriaRepository = new CategoriaRepository();
 
-        public TareaRepository() : base()
-        {
-
-        }
-        public DataTable ListarCategorias()
-        {
-            DataTable tabla = new DataTable();
-            AbrirConexion();
-            try
-            {
-                using (OracleCommand comando = conexion.CreateCommand())
-                {
-                    comando.CommandText = "ListarCategorias";
-                    comando.CommandType = CommandType.StoredProcedure;
-
-                    comando.Parameters.Add("p_cursor", OracleDbType.RefCursor, ParameterDirection.Output);
-
-                    using (OracleDataReader leerFilas = comando.ExecuteReader())
-                    {
-                        tabla.Load(leerFilas);
-                    }
-                }
-
-                return tabla;
-            }
-            catch (Exception)
-            {
-                CerrarConexion();
-                throw;
-            }
-        }
-//        SELECT t.idTask, t.descripcion, t.fecha, t.estado, c.nombre_categoria
-//FROM tareas t
-//INNER JOIN categorias c ON t.id_categoria = c.id_categoria;
-
         public string InsertarTarea(Tarea tarea)
         {
+            OracleConnection sqlCon = new OracleConnection();
             try
             {
-                string ssql = "INSERT INTO tareas (DESCRIPCION, FECHA_FINALIZADO, ESTADO, ID_CATEGORIA) VALUES (:descripcion, :fecha, :estado, :categoria)";
-                AbrirConexion();
-                OracleCommand orclCmd = conexion.CreateCommand();
-                orclCmd.CommandText = ssql;
-
-                orclCmd.Parameters.Add(new OracleParameter(":descripcion", tarea.descripcion));
-                orclCmd.Parameters.Add(new OracleParameter(":fecha_finalizado", tarea.fecha));
-                orclCmd.Parameters.Add(new OracleParameter(":estado", tarea.estado));
-                orclCmd.Parameters.Add(new OracleParameter(":categoria", tarea.categoria.id_categoria));
-
-                int i = orclCmd.ExecuteNonQuery();
-
-                CerrarConexion();
-
-                if (i > 0)
-                {
-                    return $"SE AGREGÓ LA TAREA {tarea.descripcion}";
-                }
-                else
-                {
-                    return "NO SE PUDO AGREGAR LA TAREA.";
-                }
+                sqlCon = ConexionDB.getInstancia().CrearConexion();
+                OracleCommand comando = new OracleCommand("pkg_tareas_prc.prc_InsertarTarea", sqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add("id_task", OracleDbType.Decimal).Value = tarea.idTask;
+                comando.Parameters.Add("descripcion", OracleDbType.Varchar2).Value = tarea.descripcion;
+                comando.Parameters.Add("fecha", OracleDbType.Date).Value = tarea.fecha;
+                comando.Parameters.Add("estado", OracleDbType.Varchar2).Value = tarea.estado;
+                comando.Parameters.Add("id_categoria", OracleDbType.Decimal).Value = tarea.categoria.id_categoria; 
+                sqlCon.Open();
+                comando.ExecuteReader();
+                return "Se agrego la tarea " + tarea.descripcion;
             }
-            catch (Exception )
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
-            
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
         }
 
-        public string EliminarTarea(int id)
+        public List<Tarea> ConsultarTareas()
         {
+            OracleDataReader reader;
+            OracleConnection sqlCon = new OracleConnection();
+            List<Tarea> listaTareas = new List<Tarea>();
             try
             {
-                string ssql = "DELETE FROM Tareas WHERE IDTASK = :id";
-                AbrirConexion();
-                OracleCommand cmd = conexion.CreateCommand();
-                cmd.CommandText = ssql;
-
-                cmd.Parameters.Add(new OracleParameter(":id", id));
-
-                int i = cmd.ExecuteNonQuery();
-                CerrarConexion();
-
-                if (i > 0)
+                sqlCon = ConexionDB.getInstancia().CrearConexion();
+                OracleCommand comando = new OracleCommand("ConsultarTareas", sqlCon); 
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add(new OracleParameter("Resultados", OracleDbType.RefCursor, ParameterDirection.Output));
+                sqlCon.Open();
+                reader = comando.ExecuteReader();
+                while (reader.Read())
                 {
-                    return $"SE ELIMINO LA TAREA CON ID --> {id}";
+                    listaTareas.Add(MapearTarea(reader)); 
+                }
+                return listaTareas;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+        }
+
+        public string EliminarTarea(int idTarea)
+        {
+            OracleConnection sqlCon = new OracleConnection();
+            try
+            {
+                sqlCon = ConexionDB.getInstancia().CrearConexion();
+                OracleCommand comando = new OracleCommand("prc_eliminarTarea", sqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.Add("t_id_task", OracleDbType.Decimal).Value = idTarea;
+                comando.Parameters.Add("eliminacion_exitosa", OracleDbType.Decimal).Direction = ParameterDirection.Output;
+                sqlCon.Open();
+
+                comando.ExecuteNonQuery();
+                OracleDecimal eliminacionExitosa = (OracleDecimal)comando.Parameters["eliminacion_exitosa"].Value;
+                if (eliminacionExitosa.ToInt32() == 1)
+                {
+                    return "Se eliminó la tarea correctamente";
                 }
                 else
                 {
-                    return "NO SE ENCONTRÓ NINGUNA TAREA CON EL ID ESPECIFICADO.";
+                    return "No se puede eliminar la tarea, verifique el ID de la tarea";
                 }
             }
             catch (Exception ex)
             {
-                return "ERROR AL ELIMNAR: " + ex.Message;
+                throw ex;
             }
-        }
-
-        //public string EditarTarea(Tarea tarea)
-        //{
-        //    string ssql = "UPDATE Tareas SET Descripcion = :descripcion, Categoria = :categoria, Fecha = :fecha, Estado = :estado WHERE IDTASK = :id";
-        //    AbrirConexion();
-        //    OracleCommand cmd = conexion.CreateCommand();
-        //    cmd.CommandText = ssql;
-
-        //    cmd.Parameters.Add(new OracleParameter(":descripcion", tarea.descripcion));
-        //    cmd.Parameters.Add(new OracleParameter(":categoria", tarea.categoria));
-        //    cmd.Parameters.Add(new OracleParameter(":fecha", tarea.fecha));
-        //    cmd.Parameters.Add(new OracleParameter(":estado", tarea.estado));
-        //    cmd.Parameters.Add(new OracleParameter(":id", tarea.idTask));
-
-        //    int i = cmd.ExecuteNonQuery();
-        //    CerrarConexion();
-
-        //    if (i == 1)
-        //    {
-        //        return $"SE ACTUALIZÓ LA TAREA CON LA DESCRIPCION --> {tarea.descripcion}";
-        //    }
-        //    else if (i == 0)
-        //    {
-        //        return "NO SE ENCONTRÓ UNA TAREA CON EL ID ESPECIFICADO.";
-        //    }
-        //    else
-        //    {
-        //        return "ERROR AL ACTUALIZAR LA TAREA. SE ACTUALIZARON MULTIPLES REGISTROS.";
-        //    }
-        //}
-
-        public List<Tarea> ObtenerTodasTareas()
-        {
-            List<Tarea> listaTareas = new List<Tarea>();
-            string ssql = "SELECT * FROM Tareas";
-
-            AbrirConexion();
-            OracleCommand cmd = conexion.CreateCommand();
-            cmd.CommandText = ssql;
-
-            OracleDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
+            finally
             {
-                listaTareas.Add(MapearTarea(rdr));
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
             }
-
-            rdr.Close();
-            CerrarConexion();
-
-            return listaTareas;
         }
 
+        public void EliminarTareasCompletas()
+        {
+            OracleConnection sqlCon = new OracleConnection();
+            try
+            {
+                sqlCon = ConexionDB.getInstancia().CrearConexion();
+                OracleCommand comando = new OracleCommand("prc_eliminarTareasCompletas", sqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
+                sqlCon.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+        }
+
+        public void CambiarEstadoTarea(int idTarea)
+        {
+            OracleConnection sqlCon = new OracleConnection();
+            try
+            {
+                sqlCon = ConexionDB.getInstancia().CrearConexion();
+                OracleCommand comando = new OracleCommand("prc_CambiarEstadoTarea", sqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                //ID_TAREA
+                comando.Parameters.Add("t_id_tarea", OracleDbType.Int32).Value = idTarea;
+                //NUEVO_ESTADO
+                comando.Parameters.Add("t_nuevo_estado", OracleDbType.Varchar2).Value = "COMPLETE";
+
+                sqlCon.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+        }
+
+        public List<Tarea> FiltrarTareasPorFecha(DateTime fechaSeleccionada)
+        {
+            OracleConnection sqlCon = new OracleConnection();
+            List<Tarea> tareasFiltradas = new List<Tarea>();
+
+            try
+            {
+                sqlCon = ConexionDB.getInstancia().CrearConexion();
+                OracleCommand comando = new OracleCommand("FiltrarTareasPorFecha", sqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                //FECHA_SELECCIONADA
+                comando.Parameters.Add("t_fecha_seleccionada", OracleDbType.Date).Value = fechaSeleccionada;
+                comando.Parameters.Add("resultados", OracleDbType.RefCursor, ParameterDirection.Output);
+
+                sqlCon.Open();
+                OracleDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    tareasFiltradas.Add(MapearTarea(reader));
+                }
+
+                return tareasFiltradas;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+        }
+
+
+        public string ObtenerEstadoTareaPorId(int idTarea)
+        {
+            OracleConnection sqlCon = new OracleConnection();
+
+            try
+            {
+                sqlCon = ConexionDB.getInstancia().CrearConexion();
+                OracleCommand comando = new OracleCommand("ObtenerEstadoTareaPorId", sqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.Add("t_id_tarea", OracleDbType.Decimal).Value = idTarea;
+
+                comando.Parameters.Add("t_estado", OracleDbType.Varchar2).Direction = ParameterDirection.Output;
+
+                sqlCon.Open();
+                comando.ExecuteNonQuery();
+
+                string estado = Convert.ToString(comando.Parameters["p_estado"].Value);
+
+                return estado;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener el estado de la tarea: {ex.Message}");
+                return "ERROR";
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+        }
+
+
+
+        private Categoria Obtenercategoria(int id_categora)
+        {
+            return categoriaRepository.MostrarCategorias().Find(t => t.id_categoria == id_categora);
+        }
+
+        //        SELECT t.idTask, t.descripcion, t.fecha, t.estado, c.nombre_categoria
+        //FROM tareas t
+        //INNER JOIN categorias c ON t.id_categoria = c.id_categoria;
+        
         private Tarea MapearTarea(OracleDataReader reader)
         {
             Tarea tarea = new Tarea();
 
-            tarea.idTask = Convert.ToInt32(reader["ID_TASK"]);
-            tarea.descripcion = Convert.ToString(reader["DESCRIPCION"]);
+            tarea.idTask = Convert.ToInt32(reader["Id_Task"]);
+            tarea.descripcion = Convert.ToString(reader["Descripcion"]);
+            tarea.fecha = Convert.ToDateTime(reader["Fecha"]);
+            tarea.estado = Convert.ToString(reader["Estado"]);
 
-            //categoria
-            //int id_categoria = Convert.ToInt32(reader["ID_CATEGORIA"]);
-            //tarea.categoria = Obtenercategoria(id_categoria);
-
-            tarea.fecha = Convert.ToString(reader["FECHA_FINALIZADO"]);
-            tarea.estado = Convert.ToString(reader["ESTADO"]);
+            int id_categoria = Convert.ToInt32(reader["Id_Categoria"]);
+            tarea.categoria = Obtenercategoria(id_categoria);
 
             return tarea;
-        }
-
-        private Categoria Obtenercategoria(int id_categora)
-        {
-            return categoriaRepository.ObtenerTodos().Find(p => p.id_categoria == id_categora);
         }
     }
 }
