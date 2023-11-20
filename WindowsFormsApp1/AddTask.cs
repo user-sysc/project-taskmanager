@@ -51,23 +51,30 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-
-                    Tarea tarea = new Tarea
+                    if (dtpFecha.Value < DateTime.Now)
                     {
-                        descripcion = descripcion,
-                        fecha = dtpFecha.Value,
-                        estado = "PENDING",
-                        categoria = categoriaSeleccionada
-                    };
+                        MessageBox.Show("No se puede registrar una tarea con fecha menor a la actual.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        Tarea tarea = new Tarea
+                        {
+                            descripcion = descripcion,
+                            fecha = dtpFecha.Value,
+                            estado = "PENDING",
+                            categoria = categoriaSeleccionada
+                        };
 
-                    var mssg = service.insertarTarea(tarea);
+                        var mssg = service.insertarTarea(tarea);
 
-                    MessageBox.Show(mssg, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(mssg, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                    txtDescripcion.Text = "";        //CLEAN COMBOBOX
-                    dtpFecha.Value = DateTime.Now;   //FECHA ACTUALIZADA
-                    cmbCategoria.SelectedIndex = -1; //CLEAN COMBOBOX
+                        txtDescripcion.Text = "";        //CLEAN COMBOBOX
+                        dtpFecha.Value = DateTime.Now;   //FECHA ACTUALIZADA
+                        cmbCategoria.SelectedIndex = -1; //CLEAN COMBOBOX
+                    }
                 }
             }
             catch (Exception ex)
