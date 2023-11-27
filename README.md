@@ -30,7 +30,7 @@ TaskDesk se ha desarrollado utilizando las siguientes tecnologías y herramienta
 ## Preview
 ![screenshot](https://github.com/user-sysc/project-taskmanager/blob/main/WindowsFormsApp1/Properties/img/LOGIN.PNG)
 -
-![screenshot](https://github.com/user-sysc/readmeTaskManager/blob/main/01.jpg)
+![screenshot](https://github.com/user-sysc/project-taskmanager/blob/main/WindowsFormsApp1/Properties/img/01.jpg)
 
 ## Requerimientos del Sistema
 
