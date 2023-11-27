@@ -44,4 +44,4 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\bin\Debug\Sy
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\bin\Debug\System.Text.Json.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\bin\Debug\System.ValueTuple.xml
-C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\obj\Debug\DAL.csprojAssemblyReference.cache

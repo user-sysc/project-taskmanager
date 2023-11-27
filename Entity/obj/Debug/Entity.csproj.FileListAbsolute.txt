@@ -15,4 +15,4 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\Entity\bin\Debug
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\Entity\obj\Debug\Entity.dll
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\Entity\obj\Debug\Entity.pdb
-C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\Entity\obj\Debug\Entity.csproj.AssemblyReference.cache
+C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\Entity\obj\Debug\Entity.csprojAssemblyReference.cache

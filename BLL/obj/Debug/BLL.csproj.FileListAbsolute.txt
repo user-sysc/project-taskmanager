@@ -51,4 +51,4 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\Sy
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\System.Buffers.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\obj\Debug\BLL.csprojAssemblyReference.cache

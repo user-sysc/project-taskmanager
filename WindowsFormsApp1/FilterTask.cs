@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
     {
         //TaskManagerService TMS = new TaskManagerService();
         TareaService service = new TareaService();
+        private AuthManager authManager = new AuthManager();
 
         public FilterTask()
         {
@@ -36,9 +37,10 @@ namespace WindowsFormsApp1
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
+            int id_usuario = authManager.ObtenerUsuarioActual();
 
             DateTime fechaSeleccionada = dtpFechaFilter.Value;
-            List<Tarea> tareasFiltradas = RealizarFiltradoPorFecha(fechaSeleccionada);
+            List<Tarea> tareasFiltradas = RealizarFiltradoPorFecha(fechaSeleccionada,id_usuario);
 
             if (tareasFiltradas.Count == 0)
             {
@@ -53,11 +55,11 @@ namespace WindowsFormsApp1
 
         }
 
-        private List<Tarea> RealizarFiltradoPorFecha(DateTime fechaSeleccionada)
+        private List<Tarea> RealizarFiltradoPorFecha(DateTime fechaSeleccionada,int id_usuario)
         {
             List<Tarea> tareasFiltradas = new List<Tarea>();
-
-            foreach (Tarea tarea in service.ObtenerTareas())
+            //int id_user = authManager.ObtenerUsuarioActual();
+            foreach (Tarea tarea in service.ObtenerTareas(id_usuario))
             {
                 DateTime fechaTarea = tarea.fecha;
 

@@ -85,4 +85,5 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\WindowsFormsApp1
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Buffers.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\WindowsFormsApp1\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Login.resources
+C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Register.resources

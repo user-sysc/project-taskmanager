@@ -15,8 +15,10 @@ namespace WindowsFormsApp1
 {
     public partial class AddTask : Form
     {
-        TareaService service = new TareaService();
-        CategoriaService serviceCategorias = new CategoriaService();
+        private TareaService service = new TareaService();
+        private CategoriaService serviceCategorias = new CategoriaService();
+        private AuthManager authManager = new AuthManager();
+
 
         public AddTask()
         {
@@ -38,6 +40,9 @@ namespace WindowsFormsApp1
         {
             try
             {
+                // Obtener el ID del usuario actual
+                int userActual = authManager.ObtenerUsuarioActual();
+
                 // RECUPERAMOS LA INFORMACION DIGITADA POR EL USUARIO
                 string descripcion = txtDescripcion.Text.ToUpper();
                 string fechaFinalizacion = dtpFecha.Value.ToString("dd/MM/yyyy");
@@ -63,7 +68,8 @@ namespace WindowsFormsApp1
                             descripcion = descripcion,
                             fecha = dtpFecha.Value,
                             estado = "PENDING",
-                            categoria = categoriaSeleccionada
+                            categoria = categoriaSeleccionada,
+                            id_usuario = new Usuario { id_usuario = userActual }
                         };
 
                         var mssg = service.insertarTarea(tarea);
