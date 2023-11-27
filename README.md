@@ -35,7 +35,7 @@ TaskDesk se ha desarrollado utilizando las siguientes tecnologías y herramienta
 ## Requerimientos del Sistema
 
 - ⚙️ .NET Core 3.1 o superior.
-- 🖥️ Compatible con sistemas operativos Linux, macOS y Windows.
+- 🖥️ SO Windows.
 
 ## Uso
 
