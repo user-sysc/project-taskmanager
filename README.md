@@ -50,7 +50,7 @@ TaskDesk se ha desarrollado utilizando las siguientes tecnologías y herramienta
 
 
 ## Licencia
-Este proyecto está bajo la Licencia MIT. Consulta el archivo [**LICENSE**](https://github.com/user-sysc/readmeTaskManager/blob/main/LICENSE.md) para obtener más detalles.
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [**LICENSE**](https://github.com/user-sysc/project-taskmanager/blob/main/LICENSE.md) para obtener más detalles.
 
 Esperamos que TaskDesk te ayude a mejorar tu eficiencia en la gestión de tareas. Si tienes alguna pregunta o sugerencia, no dudes en contactarnos.
 
