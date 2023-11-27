@@ -28,7 +28,7 @@ TaskDesk se ha desarrollado utilizando las siguientes tecnologías y herramienta
 ![Oracle](https://img.shields.io/badge/Oracle%20-%23F00000.svg?style=for-the-badge&logo=oracle&logoColor=white)
 
 ## Preview
-![screenshot](https://github.com/user-sysc/readmeTaskManager/blob/main/LOGIN.PNG)
+![screenshot](https://github.com/user-sysc/project-taskmanager/blob/main/WindowsFormsApp1/Properties/img/LOGIN.PNG)
 -
 ![screenshot](https://github.com/user-sysc/readmeTaskManager/blob/main/01.jpg)
 
@@ -55,7 +55,7 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [**LICENSE**](http
 Esperamos que TaskDesk te ayude a mejorar tu eficiencia en la gestión de tareas. Si tienes alguna pregunta o sugerencia, no dudes en contactarnos.
 
 <div align="center">
-  <img src="https://github.com/user-sysc/readmeTaskManager/blob/main/ECC.png" width="336" height="336">
+  <img src="https://github.com/user-sysc/project-taskmanager/blob/main/WindowsFormsApp1/Properties/img/ECC.png" width="336" height="336">
 </div>
 
 
