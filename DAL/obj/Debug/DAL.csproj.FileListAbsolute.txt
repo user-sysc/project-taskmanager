@@ -20,6 +20,7 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\bin\Debug\DA
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\bin\Debug\DAL.pdb
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\bin\Debug\Entity.dll
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\bin\Debug\Entity.pdb
+C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\obj\Debug\DAL.dll
@@ -44,4 +45,3 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\bin\Debug\Sy
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\bin\Debug\System.Text.Json.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\bin\Debug\System.ValueTuple.xml
-C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\DAL\obj\Debug\DAL.csprojAssemblyReference.cache

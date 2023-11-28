@@ -15,10 +15,8 @@ namespace WindowsFormsApp1
 {
     public partial class AddTask : Form
     {
-        private TareaService service = new TareaService();
-        private CategoriaService serviceCategorias = new CategoriaService();
-        
-
+        TareaService service = new TareaService();
+        CategoriaService serviceCategorias = new CategoriaService();
 
         public AddTask()
         {
@@ -40,7 +38,6 @@ namespace WindowsFormsApp1
         {
             try
             {
-
                 // RECUPERAMOS LA INFORMACION DIGITADA POR EL USUARIO
                 string descripcion = txtDescripcion.Text.ToUpper();
                 string fechaFinalizacion = dtpFecha.Value.ToString("dd/MM/yyyy");
@@ -54,30 +51,23 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    if (dtpFecha.Value < DateTime.Now)
+
+                    Tarea tarea = new Tarea
                     {
-                        MessageBox.Show("No se puede registrar una tarea con fecha menor a la actual.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        Tarea tarea = new Tarea
-                        {
-                            descripcion = descripcion,
-                            fecha = dtpFecha.Value,
-                            estado = "PENDING",
-                            categoria = categoriaSeleccionada,
-                        };
+                        descripcion = descripcion,
+                        fecha = dtpFecha.Value,
+                        estado = "PENDING",
+                        categoria = categoriaSeleccionada
+                    };
 
-                        var mssg = service.insertarTarea(tarea);
+                    var mssg = service.insertarTarea(tarea);
 
-                        MessageBox.Show(mssg, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(mssg, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                        txtDescripcion.Text = "";        //CLEAN COMBOBOX
-                        dtpFecha.Value = DateTime.Now;   //FECHA ACTUALIZADA
-                        cmbCategoria.SelectedIndex = -1; //CLEAN COMBOBOX
-                    }
+                    txtDescripcion.Text = "";        //CLEAN COMBOBOX
+                    dtpFecha.Value = DateTime.Now;   //FECHA ACTUALIZADA
+                    cmbCategoria.SelectedIndex = -1; //CLEAN COMBOBOX
                 }
             }
             catch (Exception ex)

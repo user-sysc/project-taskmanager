@@ -20,14 +20,13 @@ namespace DAL
             try
             {
                 sqlCon = ConexionDB.getInstancia().CrearConexion();
-                OracleCommand comando = new OracleCommand("prc_InsertarTarea", sqlCon);
+                OracleCommand comando = new OracleCommand("pkg_tareas_prc.prc_InsertarTarea", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Add("id_task", OracleDbType.Decimal).Value = tarea.idTask;
                 comando.Parameters.Add("descripcion", OracleDbType.Varchar2).Value = tarea.descripcion;
                 comando.Parameters.Add("fecha", OracleDbType.Date).Value = tarea.fecha;
                 comando.Parameters.Add("estado", OracleDbType.Varchar2).Value = tarea.estado;
-                comando.Parameters.Add("id_categoria", OracleDbType.Decimal).Value = tarea.categoria.id_categoria;
-                
-
+                comando.Parameters.Add("id_categoria", OracleDbType.Decimal).Value = tarea.categoria.id_categoria; 
                 sqlCon.Open();
                 comando.ExecuteReader();
                 return "Se agrego la tarea " + tarea.descripcion;
@@ -52,9 +51,7 @@ namespace DAL
                 sqlCon = ConexionDB.getInstancia().CrearConexion();
                 OracleCommand comando = new OracleCommand("ConsultarTareas", sqlCon); 
                 comando.CommandType = CommandType.StoredProcedure;
-
                 comando.Parameters.Add(new OracleParameter("Resultados", OracleDbType.RefCursor, ParameterDirection.Output));
-
                 sqlCon.Open();
                 reader = comando.ExecuteReader();
                 while (reader.Read())
@@ -83,7 +80,6 @@ namespace DAL
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.Add("t_id_task", OracleDbType.Decimal).Value = idTarea;
-
                 comando.Parameters.Add("eliminacion_exitosa", OracleDbType.Decimal).Direction = ParameterDirection.Output;
                 sqlCon.Open();
 
@@ -116,7 +112,6 @@ namespace DAL
                 sqlCon = ConexionDB.getInstancia().CrearConexion();
                 OracleCommand comando = new OracleCommand("prc_eliminarTareasCompletas", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-
                 sqlCon.Open();
                 comando.ExecuteNonQuery();
             }
@@ -168,7 +163,7 @@ namespace DAL
                 OracleCommand comando = new OracleCommand("FiltrarTareasPorFecha", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
 
-                //FECHA_SELECCIONADA Y ID_USUARIO
+                //FECHA_SELECCIONADA
                 comando.Parameters.Add("t_fecha_seleccionada", OracleDbType.Date).Value = fechaSeleccionada;
                 comando.Parameters.Add("resultados", OracleDbType.RefCursor, ParameterDirection.Output);
 
@@ -202,7 +197,6 @@ namespace DAL
                 sqlCon = ConexionDB.getInstancia().CrearConexion();
                 OracleCommand comando = new OracleCommand("ObtenerEstadoTareaPorId", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-                //comando.Parameters.Add("email", OracleDbType.Varchar2).Value = email;
 
                 comando.Parameters.Add("t_id_tarea", OracleDbType.Decimal).Value = idTarea;
 
@@ -233,6 +227,10 @@ namespace DAL
             return categoriaRepository.MostrarCategorias().Find(t => t.id_categoria == id_categora);
         }
 
+        //        SELECT t.idTask, t.descripcion, t.fecha, t.estado, c.nombre_categoria
+        //FROM tareas t
+        //INNER JOIN categorias c ON t.id_categoria = c.id_categoria;
+        
         private Tarea MapearTarea(OracleDataReader reader)
         {
             Tarea tarea = new Tarea();

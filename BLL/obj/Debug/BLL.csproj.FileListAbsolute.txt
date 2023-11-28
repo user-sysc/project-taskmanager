@@ -26,6 +26,7 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\DA
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\Entity.dll
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\DAL.pdb
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\Entity.pdb
+C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\obj\Debug\BLL.dll
@@ -51,4 +52,3 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\Sy
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\System.Buffers.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\obj\Debug\BLL.csprojAssemblyReference.cache

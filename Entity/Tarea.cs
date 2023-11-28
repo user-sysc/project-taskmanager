@@ -14,7 +14,6 @@ namespace Entity
         public string estado { get; set; }
         public Categoria categoria { get; set; }
         
-        
         public Tarea() { }
 
         public Tarea(int idTask, string descripcion, Categoria categoria, DateTime fecha, string estado)

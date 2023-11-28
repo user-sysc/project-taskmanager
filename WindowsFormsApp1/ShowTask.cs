@@ -20,12 +20,12 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             service = new TareaService();
+            //CargarTareas();
             MostrarTareas();
         }
 
         private void MostrarTareas()
         {
-            
             dataview_show.Rows.Clear();
             dataview_show.Columns.Clear();
             if (dataview_show.ColumnCount == 0)

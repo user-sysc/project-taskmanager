@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
         private List<Tarea> RealizarFiltradoPorFecha(DateTime fechaSeleccionada)
         {
             List<Tarea> tareasFiltradas = new List<Tarea>();
-            //int id_user = authManager.ObtenerUsuarioActual();
+
             foreach (Tarea tarea in service.ObtenerTareas())
             {
                 DateTime fechaTarea = tarea.fecha;

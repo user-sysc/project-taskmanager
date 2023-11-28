@@ -35,7 +35,6 @@ namespace WindowsFormsApp1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
             //RECUPERAMOS LA INFORMACION INGRESADA POR EL USUARIO
             string ID = txtId_delete.Text;
             if (string.IsNullOrWhiteSpace(ID))
@@ -70,7 +69,6 @@ namespace WindowsFormsApp1
 
         private void btnDeleteTaskC_Click(object sender, EventArgs e)
         {
-
             string msg = service.EliminarTareasCompletas();
             
             MessageBox.Show(msg, "Resultado de Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
