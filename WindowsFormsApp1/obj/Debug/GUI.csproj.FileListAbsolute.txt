@@ -85,3 +85,46 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\WindowsFormsApp1
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Buffers.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\BLL.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\Entity.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\Guna.UI2.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\DAL.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Text.Json.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Memory.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\BLL.pdb
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\BLL.dll.config
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\Entity.pdb
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\DAL.pdb
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\DAL.dll.config
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Text.Json.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Memory.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Buffers.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddTask.resources
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.DeleteTask.resources
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FilterTask.resources
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormPrincipal.resources
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ShowTask.resources
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

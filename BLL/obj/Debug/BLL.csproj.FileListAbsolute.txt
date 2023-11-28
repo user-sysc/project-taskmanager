@@ -52,3 +52,35 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\Sy
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\System.Buffers.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\BLL.dll.config
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\BLL.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\BLL.pdb
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\DAL.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\Entity.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Text.Json.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Memory.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.ValueTuple.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Buffers.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\DAL.pdb
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\DAL.dll.config
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\Entity.pdb
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Text.Json.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Memory.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.ValueTuple.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Buffers.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\obj\Debug\BLL.dll
+C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\obj\Debug\BLL.pdb
