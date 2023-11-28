@@ -28,8 +28,6 @@ TaskDesk se ha desarrollado utilizando las siguientes tecnologías y herramienta
 ![Oracle](https://img.shields.io/badge/Oracle%20-%23F00000.svg?style=for-the-badge&logo=oracle&logoColor=white)
 
 ## Preview
-![screenshot](https://github.com/user-sysc/project-taskmanager/blob/main/WindowsFormsApp1/Properties/img/LOGIN.PNG)
--
 ![screenshot](https://github.com/user-sysc/project-taskmanager/blob/main/WindowsFormsApp1/Properties/img/01.jpg)
 
 ## Requerimientos del Sistema
