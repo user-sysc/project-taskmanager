@@ -16,7 +16,6 @@ namespace WindowsFormsApp1
     {
         //TaskManagerService TMS = new TaskManagerService();
         TareaService service = new TareaService();
-        private AuthManager authManager = new AuthManager();
 
         public DeleteTask()
         {
@@ -36,7 +35,6 @@ namespace WindowsFormsApp1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int id_usuario = authManager.ObtenerUsuarioActual();
 
             //RECUPERAMOS LA INFORMACION INGRESADA POR EL USUARIO
             string ID = txtId_delete.Text;
@@ -54,7 +52,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                string message = service.eliminarTarea(id,id_usuario);
+                string message = service.eliminarTarea(id);
                 MessageBox.Show(message, "Resultado de eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtId_delete.Text = "";
             }
@@ -72,9 +70,8 @@ namespace WindowsFormsApp1
 
         private void btnDeleteTaskC_Click(object sender, EventArgs e)
         {
-            int id_usuario = authManager.ObtenerUsuarioActual();
 
-            string msg = service.EliminarTareasCompletas(id_usuario);
+            string msg = service.EliminarTareasCompletas();
             
             MessageBox.Show(msg, "Resultado de Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

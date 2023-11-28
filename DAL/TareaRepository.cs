@@ -13,7 +13,6 @@ namespace DAL
     public class TareaRepository : ConexionDB
     {
         private CategoriaRepository categoriaRepository = new CategoriaRepository();
-        private UsuarioRepository usuarioRepository = new UsuarioRepository();
 
         public string InsertarTarea(Tarea tarea)
         {
@@ -27,7 +26,6 @@ namespace DAL
                 comando.Parameters.Add("fecha", OracleDbType.Date).Value = tarea.fecha;
                 comando.Parameters.Add("estado", OracleDbType.Varchar2).Value = tarea.estado;
                 comando.Parameters.Add("id_categoria", OracleDbType.Decimal).Value = tarea.categoria.id_categoria;
-                comando.Parameters.Add("id_usuario", OracleDbType.Decimal).Value = tarea.id_usuario.id_usuario;
                 
 
                 sqlCon.Open();
@@ -44,7 +42,7 @@ namespace DAL
             }
         }
 
-        public List<Tarea> ConsultarTareas(int id_usuario)
+        public List<Tarea> ConsultarTareas()
         {
             OracleDataReader reader;
             OracleConnection sqlCon = new OracleConnection();
@@ -55,7 +53,6 @@ namespace DAL
                 OracleCommand comando = new OracleCommand("ConsultarTareas", sqlCon); 
                 comando.CommandType = CommandType.StoredProcedure;
 
-                comando.Parameters.Add("p_id_usuario", OracleDbType.Decimal).Value = id_usuario;
                 comando.Parameters.Add(new OracleParameter("Resultados", OracleDbType.RefCursor, ParameterDirection.Output));
 
                 sqlCon.Open();
@@ -76,7 +73,7 @@ namespace DAL
             }
         }
 
-        public string EliminarTarea(int idTarea,int id_usuario)
+        public string EliminarTarea(int idTarea)
         {
             OracleConnection sqlCon = new OracleConnection();
             try
@@ -86,7 +83,6 @@ namespace DAL
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.Add("t_id_task", OracleDbType.Decimal).Value = idTarea;
-                comando.Parameters.Add("t_id_usuario", OracleDbType.Decimal).Value = id_usuario;
 
                 comando.Parameters.Add("eliminacion_exitosa", OracleDbType.Decimal).Direction = ParameterDirection.Output;
                 sqlCon.Open();
@@ -112,7 +108,7 @@ namespace DAL
             }
         }
 
-        public void EliminarTareasCompletas(int id_usuario)
+        public void EliminarTareasCompletas()
         {
             OracleConnection sqlCon = new OracleConnection();
             try
@@ -120,8 +116,6 @@ namespace DAL
                 sqlCon = ConexionDB.getInstancia().CrearConexion();
                 OracleCommand comando = new OracleCommand("prc_eliminarTareasCompletas", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-
-                comando.Parameters.Add("t_id_usuario", OracleDbType.Decimal).Value = id_usuario;
 
                 sqlCon.Open();
                 comando.ExecuteNonQuery();
@@ -163,7 +157,7 @@ namespace DAL
             }
         }
 
-        public List<Tarea> FiltrarTareasPorFecha(DateTime fechaSeleccionada,int id_usuario)
+        public List<Tarea> FiltrarTareasPorFecha(DateTime fechaSeleccionada)
         {
             OracleConnection sqlCon = new OracleConnection();
             List<Tarea> tareasFiltradas = new List<Tarea>();
@@ -176,7 +170,6 @@ namespace DAL
 
                 //FECHA_SELECCIONADA Y ID_USUARIO
                 comando.Parameters.Add("t_fecha_seleccionada", OracleDbType.Date).Value = fechaSeleccionada;
-                comando.Parameters.Add("t_id_usuario", OracleDbType.Decimal).Value = id_usuario;
                 comando.Parameters.Add("resultados", OracleDbType.RefCursor, ParameterDirection.Output);
 
                 sqlCon.Open();
@@ -239,10 +232,6 @@ namespace DAL
         {
             return categoriaRepository.MostrarCategorias().Find(t => t.id_categoria == id_categora);
         }
-        private Usuario ObtenerUsuario(int id_usuario)
-        {
-            return usuarioRepository.MostrarUsuarios().Find(t => t.id_usuario == id_usuario);
-        }        
 
         private Tarea MapearTarea(OracleDataReader reader)
         {
@@ -255,9 +244,6 @@ namespace DAL
 
             int id_categoria = Convert.ToInt32(reader["Id_Categoria"]);
             tarea.categoria = Obtenercategoria(id_categoria);
-
-            int id_usuario = Convert.ToInt32(reader["id_usuario"]);
-            tarea.id_usuario = ObtenerUsuario(id_usuario);
 
             return tarea;
         }

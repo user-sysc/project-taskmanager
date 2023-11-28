@@ -15,7 +15,6 @@ namespace WindowsFormsApp1
     public partial class ShowTask : Form
     {
         TareaService service;
-        private AuthManager authManager = new AuthManager();
 
         public ShowTask()
         {
@@ -26,7 +25,6 @@ namespace WindowsFormsApp1
 
         private void MostrarTareas()
         {
-            int id_usuario = authManager.ObtenerUsuarioActual();
             
             dataview_show.Rows.Clear();
             dataview_show.Columns.Clear();
@@ -38,7 +36,7 @@ namespace WindowsFormsApp1
                 dataview_show.Columns.Add("FECHA FINALIZADO", "FECHA FINALIZADO");
                 dataview_show.Columns.Add("ESTADO", "ESTADO");
             }
-            var tareas = service.ObtenerTareas(id_usuario);
+            var tareas = service.ObtenerTareas();
             foreach (var tarea in tareas)
             {
                 dataview_show.Rows.Add(

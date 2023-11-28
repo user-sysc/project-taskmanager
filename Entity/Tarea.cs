@@ -13,19 +13,17 @@ namespace Entity
         public DateTime fecha { get; set; }
         public string estado { get; set; }
         public Categoria categoria { get; set; }
-        public Usuario id_usuario { get; set; }
         
         
         public Tarea() { }
 
-        public Tarea(int idTask, string descripcion, Categoria categoria, DateTime fecha, string estado, Usuario id_usuario)
+        public Tarea(int idTask, string descripcion, Categoria categoria, DateTime fecha, string estado)
         {
             this.idTask = idTask;
             this.descripcion = descripcion;
             this.fecha = fecha;
             this.estado = estado;
             this.categoria = categoria;
-            this.id_usuario = id_usuario;
         }
     }
 }

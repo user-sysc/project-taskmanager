@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
     {
         private TareaService service = new TareaService();
         private CategoriaService serviceCategorias = new CategoriaService();
-        private AuthManager authManager = new AuthManager();
+        
 
 
         public AddTask()
@@ -40,8 +40,6 @@ namespace WindowsFormsApp1
         {
             try
             {
-                // Obtener el ID del usuario actual
-                int userActual = authManager.ObtenerUsuarioActual();
 
                 // RECUPERAMOS LA INFORMACION DIGITADA POR EL USUARIO
                 string descripcion = txtDescripcion.Text.ToUpper();
@@ -69,7 +67,6 @@ namespace WindowsFormsApp1
                             fecha = dtpFecha.Value,
                             estado = "PENDING",
                             categoria = categoriaSeleccionada,
-                            id_usuario = new Usuario { id_usuario = userActual }
                         };
 
                         var mssg = service.insertarTarea(tarea);
