@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
             this.WindowState = FormWindowState.Minimized;  // BOTON MINIMIZAR VENTANA
         }
         //METODO PARA ABRIR EL FORMULARIO DENTRO DE UN PANEL
-        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        public void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
             formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault(); //Busca el formulario

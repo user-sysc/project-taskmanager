@@ -17,23 +17,23 @@ namespace BLL
         {
             return repository.InsertarTarea(tarea);
         }
-        public string eliminarTarea(int id)
+        public string eliminarTarea(int id,int id_usuario)
         {
-            return repository.EliminarTarea(id);
+            return repository.EliminarTarea(id,id_usuario);
         }
-        public List<Tarea> ObtenerTareas()
+        public List<Tarea> ObtenerTareas(int id_usuario)
         {
-            return repository.ConsultarTareas();
+            return repository.ConsultarTareas(id_usuario);
         }
-        public List<Tarea> FiltrarTareasPorFecha(DateTime fechaSeleccionada)
+        public List<Tarea> FiltrarTareasPorFecha(DateTime fechaSeleccionada,int id_usuario)
         {
-            return repository.FiltrarTareasPorFecha(fechaSeleccionada);
+            return repository.FiltrarTareasPorFecha(fechaSeleccionada,id_usuario);
         }
-        public string EliminarTareasCompletas()
+        public string EliminarTareasCompletas(int id_usuario)
         {
             try
             {
-                repository.EliminarTareasCompletas();
+                repository.EliminarTareasCompletas(id_usuario);
                 return "Todas las tareas completadas se eliminaron correctamente.";
             }
             catch (Exception ex)

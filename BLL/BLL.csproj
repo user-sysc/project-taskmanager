@@ -45,6 +45,7 @@
     <Compile Include="TareaService.cs" />
     <Compile Include="TaskManagerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

@@ -26,7 +26,6 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\DA
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\Entity.dll
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\DAL.pdb
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\Entity.pdb
-C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\obj\Debug\BLL.dll
@@ -52,35 +51,36 @@ C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\Sy
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\System.Buffers.xml
 C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\BLL.dll.config
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\BLL.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\BLL.pdb
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\DAL.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\Entity.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\Oracle.ManagedDataAccess.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Text.Json.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Memory.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Text.Encodings.Web.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.ValueTuple.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Buffers.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\DAL.pdb
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\DAL.dll.config
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\Entity.pdb
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Text.Json.xml
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Memory.xml
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Text.Encodings.Web.xml
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.ValueTuple.xml
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Buffers.xml
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\obj\Debug\BLL.csproj.CopyComplete
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\obj\Debug\BLL.dll
-C:\Users\morga\OneDrive\Documentos\project-taskmanager\BLL\obj\Debug\BLL.pdb
+C:\Users\Julio Ríos\Documents\PROGRAMACION\project-taskmanager\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\BLL.dll.config
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\BLL.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\BLL.pdb
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\DAL.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\Entity.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Text.Json.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Memory.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.ValueTuple.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Buffers.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\DAL.pdb
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\DAL.dll.config
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\Entity.pdb
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Text.Json.xml
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Memory.xml
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.ValueTuple.xml
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Buffers.xml
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\obj\Debug\BLL.dll
+C:\Users\Julio Ríos\Downloads\project-taskmanager-b8c0fbdf440eb0c9a7ccb38cb5dd264e466b6a8b\BLL\obj\Debug\BLL.pdb

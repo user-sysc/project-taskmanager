@@ -79,6 +79,7 @@
     <Compile Include="TareaRepository.cs" />
     <Compile Include="TaskManagerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
