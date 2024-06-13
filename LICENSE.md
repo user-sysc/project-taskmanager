@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) [2023] [ECC]
+Copyright (c) [2023] [user-sysc]
 
 Se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia
 de este software y archivos de documentación asociados (el "Software"), para tratar
